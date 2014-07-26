@@ -1,0 +1,9 @@
+BattleCore.vcxproj
+BattleCore.vcxproj.filters
+
+Common/
+Lua-5.1.4/
+
+ReadMe.txt
+Debug/
+Release/
