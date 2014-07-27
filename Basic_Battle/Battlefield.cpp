@@ -284,8 +284,9 @@ int Battlefield::BattleEnd()
 	SweepBattlefield(true,false,false,false);	//只清理子弹
 
 
-	//battleStatistics.winnerID
-	return winner;	//pAI中的AI下标，若无胜者为-1
+	battleStatistics.winnerID=winner_single_battle;
+
+	return winner;	//pAI中的AI下标(此处一期是AIManager中的下标)，若无胜者为-1
 	
 }
 
@@ -971,13 +972,12 @@ bool Battlefield::AddRobot(Robot* newRobot)
 }
 
 
-bool Battlefield::AddRobotAI(RobotAI_Interface* newRobotAI,int index)
+int Battlefield::AddRobotAI(RobotAI_Interface* newRobotAI,int index)
 {
 	//对AI的操作要小心啊，仅此一件不要删了。。
 	pRobot.push_back(new Robot(newRobotAI,index));
 
-	//temp
-	return true;
+	return (pRobot.size()-1);
 }
 
 int Battlefield::NewBattle()
@@ -1005,6 +1005,47 @@ int Battlefield::NewBattle()
 }
 
 
+
+
+void Battlefield::SweepBattlefield_Bullet()
+{
+	//int bn=pBullet.size();
+	list<Bullet*>::iterator iter;
+	for(iter=pBullet.begin();iter!=pBullet.end();iter++)
+	{
+		if((*iter)!=NULL)
+		{
+			delete (*iter);
+			(*iter)=NULL;
+		}
+	}
+	pBullet.clear();
+}
+
+void Battlefield::SweepBattlefield_Robot()
+{
+	int i;
+	int rn=pRobot.size();
+	for(i=0;i<rn;i++)
+	{
+		delete pRobot.at(i);
+		pRobot.at(i)=NULL;
+	}
+	pRobot.clear();
+}
+
+
+//TODO
+void Battlefield::SweepBattlefield_Map()
+{
+	//Sweep Obstacle
+
+
+	//Sweep Arsenal
+
+
+}
+
 void Battlefield::SweepBattlefield(bool f_bullet=true,bool f_robot=true,bool f_obstacle=true,bool f_arsenal=true)
 {
 	//战斗结束后清理战场
@@ -1014,29 +1055,13 @@ void Battlefield::SweepBattlefield(bool f_bullet=true,bool f_robot=true,bool f_o
 	
 	if(f_bullet)
 	{
-		//int bn=pBullet.size();
-		list<Bullet*>::iterator iter;
-		for(iter=pBullet.begin();iter!=pBullet.end();iter++)
-		{
-			if((*iter)!=NULL)
-			{
-				delete (*iter);
-				(*iter)=NULL;
-			}
-		}
-		pBullet.clear();
+		SweepBattlefield_Bullet();
 	}
 
 
 	if(f_robot)
 	{
-		int rn=pRobot.size();
-		for(i=0;i<rn;i++)
-		{
-			delete pRobot[i];
-			pRobot[i]=NULL;
-		}
-		pRobot.clear();
+		SweepBattlefield_Robot();
 	}
 
 	if(f_obstacle)

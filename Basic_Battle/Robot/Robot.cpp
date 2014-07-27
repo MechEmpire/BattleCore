@@ -182,8 +182,12 @@ void Robot::SetWeapon(weapontypename wtn)
 		pWeapon=new W_ElectricSaw();
 		break;
 
-	//default:
-
+	default:
+		//AI送的数据有问题
+		//默认第一个
+		cout<<"Weapon Select Error!\nGet Default Weapon...\n";
+		pWeapon=new W_Cannon();
+		break;
 	}
 	pWeapon->SetpRobot(this);
 }
@@ -215,7 +219,12 @@ void Robot::SetEngine(enginetypename etn)
 		pEngine=new E_UFO();
 		break;
 
-	//default:
+	default:
+		//AI送的数据有问题
+		//默认第一个
+		cout<<"Engine Select Error!\nGet Default Engine...\n";
+		pEngine=new E_Spider();
+		break;
 	}
 
 	pEngine->SetpRobot(this);

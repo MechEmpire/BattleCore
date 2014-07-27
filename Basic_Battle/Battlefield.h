@@ -23,7 +23,7 @@ private:
 	
 
 
-	//9-15 优化：这个信息类每帧重写我觉得是浪费的
+	//2013-9-15 优化：这个信息类每帧重写我觉得是浪费的
 	//bulletinfo什么的struct可以集成在Bullet类里，以指针的方式指向数据
 	//
 	RobotAI_BattlefieldInformation info;	//战场信息
@@ -75,16 +75,20 @@ public:
 	double Get_B_Down(){return B_Down;}
 
 
-	AchievementData_Battle& GetAchievementData(int index)
+	//const? &
+	AchievementData_Battle & GetAchievementData(int index)
 	{
-		return pRobot[index]->GetAchievementData();
+		return pRobot.at(index)->GetAchievementData();
 	}
 
-
+	BattleStatistics & GetBattleStatistivs()
+	{
+		return battleStatistics;
+	}
 	
 
 	//战斗参数设置
-	void SetBattleMode(BattleMode battle_mode){battleMode=battle_mode;}
+	void SetBattleMode(const BattleMode & battle_mode){battleMode=battle_mode;}
 
 	void SetMode_LimitTime(bool a){battleMode.limitTime=a;}
 	void SetMode_Record(bool a,string filename="Record_1"){battleMode.record=a;pRecordManager->SetFileName(filename);}
@@ -93,7 +97,7 @@ public:
 
 	//参战机器人设置
 	bool AddRobot(Robot*);	//向战场添加机器人,返回是否添加成功
-	bool AddRobotAI(RobotAI_Interface*,int);	//添加参战AI
+	int AddRobotAI(RobotAI_Interface*,int);	//添加参战AI，返回在pRobot中下标
 
 	//开始战斗，返回战斗是否成功进行（防止Robot添加有误）外部的入口操纵
 	//2014-1-24 返回胜者在AIManager中的下标
@@ -108,8 +112,12 @@ public:
 	int BattleEnd();	//返回胜者AIManager中的下标
 
 	//TODO:这样的代码可读性差，把他们拆成四个函数
-	void SweepBattlefield(bool f_bullet,bool f_robot,bool f_obstacle,bool f_arsenal);	//打扫战场
+	void SweepBattlefield_Bullet();
+	void SweepBattlefield_Robot();
+	void SweepBattlefield_Map();
 	//参数分别为是否清理pBullet,pRobot,pObstacle,pArsenal
+	void SweepBattlefield(bool f_bullet,bool f_robot,bool f_obstacle,bool f_arsenal);	//打扫战场
+	
 
 
 	void Update();//round_start,round_end都在里头
