@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 
 //全局函数（供指针用）声明
 void trace_global(string);

@@ -6,7 +6,8 @@
 DataLoader::DataLoader():weapon_data(Weapon_Number),engine_data(Engine_Number)
 {
 	GameData=new DataVessel;
-	pLuaState=lua_open();
+	//pLuaState=lua_open();
+	pLuaState=luaL_newstate();	//linux
 	luaL_openlibs(pLuaState);
 	luaopen_base(pLuaState);
 	luaopen_string(pLuaState);

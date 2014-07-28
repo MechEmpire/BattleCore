@@ -343,6 +343,11 @@ int Random(int minv,int maxv)
 {
 	//产生[minv,maxv]之间整数的随机函数
 
+	int gap=maxv-minv;
+	assert(gap>0);
+	return (minv+rand()%(gap+1));
+
+	/*
 	//2014-1-22
 	//可以考虑用蒙特卡洛方法
 	if(maxv<minv)
@@ -372,5 +377,5 @@ int Random(int minv,int maxv)
 	return 0;
 	//return rand()%(maxv-minv+1)+minv;
 
-	
+	*/
 }

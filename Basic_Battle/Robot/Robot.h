@@ -2,8 +2,7 @@
 //#include "RobotAI_Interface.h"
 #include "../Achievementstruct.h"
 
-//#include"Weapon\Weapon.h"
-//#include "Engine\Engine.h"
+
 
 class Weapon;
 class Engine;

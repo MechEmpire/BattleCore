@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 
 #define TIME_LEFT_MAX 4000
 

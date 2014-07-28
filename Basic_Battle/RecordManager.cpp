@@ -1,6 +1,6 @@
 //#include "stdafx.h"
 #include "../stdafx.h"
-#include "Robot\RobotAIstruct.h"
+#include "Robot/RobotAIstruct.h"
 #include "Battlefield.h"
 #include "RecordManager.h"
 #include "Recordstruct.h"
@@ -241,8 +241,11 @@ void RecordManager::ReleaseRecord(int winner)
 	//把frameInfo写入文件,no extraInfo?
 	//TODO:路径构建
 	BuildFileRoute();
-	f.open(fileRoute_Final);
-	//f.open("Record_1.txt");
+
+	const char * fr=fileRoute_Final.c_str();
+	f.open(fr);
+	//f.open(fileRoute_Final);
+	
 
 	int i,j;
 

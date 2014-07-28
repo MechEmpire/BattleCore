@@ -1,5 +1,5 @@
 #pragma once
-#include "Basic_Battle\Robot\RobotAIstruct.h"
+
 
 #define FRAME_NUM 10000
 

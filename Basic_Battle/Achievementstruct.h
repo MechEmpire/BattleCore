@@ -2,7 +2,7 @@
 
 
 //统计数据
-
+#define MAX_INT 99999
 
 //一个机甲：单场战斗的成就统计数据
 class AchievementData_Battle
@@ -176,7 +176,7 @@ public:
 		data_global.Init();
 		data_avg.Init();
 		data_best.Init();
-		data_best.damage=MaxInt;
+		data_best.damage=MAX_INT;
 	}
 
 	AchievementData(/*int in*/)//:data_global(),data_avg(),data_max()
