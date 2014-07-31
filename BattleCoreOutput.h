@@ -6,21 +6,25 @@
 //和其他一些支持性的struct
 //---------------------------------------
 
-void LoadGameData();
 
-void InitNewBattle(/*...*/);
+extern "C"
+{
 
-void SetBattleMode(const BattleMode & battleMode);
+	void LoadGameData();
 
-int AddRobotAI(RobotAI_Interface* pAI);
+	void InitNewBattle(/*...*/);
 
-AchievementData_Battle& GetAchievementData(int robotID);
+	void SetBattleMode(const BattleMode & battleMode);
 
-BattleStatistics& GetBattleStatistivs();
+	int AddRobotAI(RobotAI_Interface* pAI);
 
-bool LaunchBattle();
+	AchievementData_Battle& GetAchievementData(int robotID);
 
+	BattleStatistics& GetBattleStatistivs();
 
+	bool LaunchBattle();
+
+}
 
 
 #ifdef ROBOT_AI_TEST
