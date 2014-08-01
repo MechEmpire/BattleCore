@@ -85,6 +85,7 @@ public:
 	FP_GET_STRING_B getBulletName;
 	FP_GET_DOUBLE_B getBulletSpeed;
 	FP_GET_INT_B getBulletDamage;
+	FP_GET_INT_B getBulletFlyTime;
 	/////////////////////////////////////////////
 
 

@@ -33,15 +33,13 @@ B_Tesla_Lightning::~B_Tesla_Lightning(void)
 
 bool B_Tesla_Lightning::HitObstcale(Obstacle& ob)
 {
-	//ÏûÊ§·µ»Øtrue
-	return true;
+	return GeneralHitObstcale(ob);
 }
 void B_Tesla_Lightning::Hit(Robot& robot)
 {
-	robot.GetEngine().ModifyHp(-damage);
-	
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	GeneralHit(robot);
 }
 
+void B_Tesla_Lightning::HitFlyEnd()
+{
+}

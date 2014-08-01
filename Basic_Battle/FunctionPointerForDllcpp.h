@@ -18,3 +18,4 @@ double getEngineAcceleration(enginetypename etn);
 string getBulletName(bullettypename btn);
 double getBulletSpeed(bullettypename btn);
 int getBulletDamage(bullettypename btn);
+int getBulletFlyTime(bullettypename btn);

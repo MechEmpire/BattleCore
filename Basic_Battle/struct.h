@@ -11,16 +11,7 @@ using namespace std;
 
 
 
-enum events{Add_Bullet,Remove_Bullet,Explode,Prism_Laser,Tesla_Lightning,
-					Round_Start,Round_End,Battle_Start,Battle_End,
 
-			//Record related
-			R_RobotInfo,R_BulletInfo,//此二事件已无用
-			////////////
-			R_Fire,R_WeaponTurn,R_Run,R_EngineTurn,
-			R_HitInfo
-
-			};
 
 
 enum shapes{S_Circle,S_Box,S_Beam};

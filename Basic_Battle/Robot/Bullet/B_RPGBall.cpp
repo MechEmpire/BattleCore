@@ -93,3 +93,7 @@ void B_RPGBall::Update()
 	//test
 	//cout<<"RPG：调用的是新的Update\n";
 }
+
+void B_RPGBall::HitFlyEnd()
+{
+}

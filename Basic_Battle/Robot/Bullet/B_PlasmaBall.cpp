@@ -122,10 +122,10 @@ bool B_PlasmaBall::HitObstcale(Obstacle & ob)
 
 void B_PlasmaBall::Hit(Robot& robot)
 {
-	robot.GetEngine().ModifyHp(-damage);
-	
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	GeneralHit(robot);
+}
+
+void B_PlasmaBall::HitFlyEnd()
+{
 }
 

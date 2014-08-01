@@ -30,6 +30,7 @@ bool W_MissileLauncher::Fire(int mnplt)
 		double r=AnglePlus(rotation,p);
 		double a=AngleToRadian(r);//弧度
 
+		//跟踪弹的操纵码是追踪下标为fire-1的机甲
 		int chaseID=mnplt-1;
 
 		pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),

@@ -69,6 +69,7 @@ int AddRobotAI(RobotAI_Interface* pAI)
 	pAI->getBulletName=getBulletName;
 	pAI->getBulletSpeed=getBulletSpeed;
 	pAI->getBulletDamage=getBulletDamage;
+	pAI->getBulletFlyTime=getBulletFlyTime;
 	///////////////////
 	
 

@@ -9,17 +9,46 @@
 
 
 
-enum weapontypename{WT_Cannon,WT_Shotgun,
-		WT_RPG,WT_Machinegun,WT_Prism,WT_Tesla,
-		WT_PlasmaTorch,WT_MissileLauncher,
-		WT_ElectricSaw};
+enum weapontypename
+{
+	WT_Cannon
+	,WT_Shotgun
+	,WT_RPG
+	,WT_Machinegun
+	,WT_Prism
+	,WT_Tesla
+	,WT_PlasmaTorch
+	,WT_MissileLauncher
+	,WT_ElectricSaw
+};
 
-enum enginetypename{ET_Spider,ET_Robotman,
-	ET_AFV,ET_UFO};
+enum enginetypename
+{
+	ET_Spider
+	,ET_Robotman
+	,ET_AFV
+	,ET_UFO
+};
 
-enum bullettypename{BT_Cannonball,BT_ShotgunBall,
-	BT_RPGBall,BT_MachinegunBall,BT_Prism_Laser,BT_Tesla_Lightning,
-	BT_PlasmaBall,BT_TrackingMissile,BT_ElectricSaw,BT_NULL};	//TODO
+enum bullettypename
+{
+	BT_Cannonball
+	,BT_ShotgunBall
+	,BT_RPGBall
+	,BT_MachinegunBall
+	,BT_Prism_Laser
+	,BT_Tesla_Lightning
+	,BT_PlasmaBall
+	,BT_TrackingMissile
+	,BT_ElectricSaw
+	
+	//在这里添加游戏玩家可见(应该是武器直接发射的)类型
+
+	
+	//以下是功能性的类型
+	
+	,BT_NULL
+};
 
 
 

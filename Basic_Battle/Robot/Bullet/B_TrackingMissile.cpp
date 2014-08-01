@@ -41,16 +41,15 @@ B_TrackingMissile::~B_TrackingMissile(void)
 
 bool B_TrackingMissile::HitObstcale(Obstacle& ob)
 {
-	//ÏûÊ§·µ»Øtrue
-	return true;
+	return GeneralHitObstcale(ob);
 }
 void B_TrackingMissile::Hit(Robot& robot)
 {
-	robot.GetEngine().ModifyHp(-damage);
-	
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	GeneralHit(robot);
+}
+
+void B_TrackingMissile::HitFlyEnd()
+{
 }
 
 

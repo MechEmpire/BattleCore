@@ -12,6 +12,7 @@ public:
 	virtual ~B_ShotgunBall(void);
 	virtual bool HitObstcale(Obstacle &);
 	virtual void Hit(Robot &);
+	virtual void HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 };
 

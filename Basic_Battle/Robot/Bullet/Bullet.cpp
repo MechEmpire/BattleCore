@@ -44,6 +44,8 @@ void Bullet::GeneralInit(double x,double y,double rr,int launcherIDX)
 	vy=speed*sin(rr);
 
 	vr=0;
+
+	remainingFlyTime=flyTime;
 }
 
 
@@ -60,6 +62,14 @@ void Bullet::LoadData(bullettypename btn)
 	name=pDataLoader->GetGameData()->name_Bullet[btn];
 	speed=pDataLoader->GetGameData()->speed_Bullet[btn];
 	damage=pDataLoader->GetGameData()->damage_Bullet[btn];
-	
+	flyTime=pDataLoader->GetGameData()->flyTime_Bullet[btn];
 }
 
+void Bullet::GeneralHit(Robot & robot)
+{
+	robot.GetEngine().ModifyHp(-damage);
+
+	Robot* r=pBattlefield->GetRobotPointer(launcherID);
+	r->GetAchievementData().Add_hit();
+	r->GetAchievementData().Add_output(damage);
+}

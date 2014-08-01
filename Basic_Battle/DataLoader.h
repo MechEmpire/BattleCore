@@ -37,6 +37,7 @@ struct DataVessel
 	string name_Bullet[Bullet_Number];
 	double speed_Bullet[Bullet_Number];
 	int damage_Bullet[Bullet_Number];		//?
+	int flyTime_Bullet[Bullet_Number];
 	//For RPGBall
 	double explodeR_RPGBall;
 	double acceleration_RPGBall;

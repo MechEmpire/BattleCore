@@ -33,30 +33,48 @@ Battlefield* Battlefield::Instance()
 
 void Battlefield::HandleEvent(events msg, void* extraInfo)
 {
-	int i,k;
+	
 	switch(msg)
 	{
 	case Add_Bullet:
-		//extraInfo是已处理好的Bullet,直接加到“显示对象列表中”
-		pBullet.insert(pBullet.end(),(Bullet*)extraInfo);
-		//注册EntityID
-		//pmngr->RegisterEntity((Bullet*)extraInfo);
-		break;
+		{
+			//extraInfo是已处理好的Bullet,直接加到“显示对象列表中”
+			pBullet.insert(pBullet.end(),(Bullet*)extraInfo);
+			//注册EntityID
+			//pmngr->RegisterEntity((Bullet*)extraInfo);
+			break;
+		}
 	
 	case Explode:
 		//火箭弹grenade爆炸
 		//TODO:这个做成RPGBall的静态函数
-		k=pRobot.size();
-		for(i=0;i<k;i++)
 		{
-			if(HitTestCircles(pRobot[i]->GetEngine().GetCircle(),*((Circle*)extraInfo)))
+			int i,k;
+			k=pRobot.size();
+			for(i=0;i<k;i++)
 			{
-				//伤害,来自脚本读取类单例
-				pRobot[i]->GetEngine().ModifyHp(-(pDataLoader->GetGameData()->damage_Bullet[BT_RPGBall]));//temp
+				if(HitTestCircles(pRobot[i]->GetEngine().GetCircle(),*((Circle*)extraInfo)))
+				{
+					//伤害,来自脚本读取类单例
+					pRobot[i]->GetEngine().ModifyHp(-(pDataLoader->GetGameData()->damage_Bullet[BT_RPGBall]));//temp
+				}
 			}
+			delete extraInfo;
+			break;
 		}
-		delete extraInfo;
-		break;
+
+
+	case Event_BulletHitTestAllBullet:
+		{
+			//！！！这么搞，小飞机永远不可能被光棱和磁暴击落了。。
+			//TODO解决方案：（也是尽量统一直线型和普通型子弹的措施）
+			//		直线型特殊获得最近hit_point之后
+			//		产生hittest_bullet型的Bullet
+
+			//extraInfo是Bullet*
+			Bullet* subjectBullet=(Bullet*)extraInfo;
+
+		}
 	}
 
 }
@@ -770,13 +788,27 @@ void Battlefield::Update()
 				}
 			}
 
-
+			/*
 			if(!disappear && (*iter)->GetType()==BT_ElectricSaw)
 			{
 				//近战子弹必须消失
 				RemoveBulletFromBattlefield(iter,false);//不产生hit
 				disappear=true;
 			}
+			*/
+
+			if(!disappear)
+			{
+				disappear=(*iter)->UpdateFlyTime();
+				if(disappear)
+				{
+					//不产生hit的状况
+					(*iter)->HitFlyEnd();
+					RemoveBulletFromBattlefield(iter,false);
+				}
+			}
+
+
 
 			if(!disappear)
 			{

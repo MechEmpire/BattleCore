@@ -165,6 +165,9 @@ bool DataLoader::LoadDataFromLuaScript(const char* fileName)
 	//lua_gettop(pLuaState);
 	lua_settop(pLuaState,0);
 	//加载游戏数据
+
+	//Weapon
+
 	LoadStrArray("name_Weapon",Weapon_Number,GameData->name_Weapon);
 	LoadNumArray("damage_Weapon",Weapon_Number,GameData->damage_Weapon);
 	LoadNumArray("Ammo_Weapon",Weapon_Number,GameData->Ammo_Weapon);
@@ -179,16 +182,26 @@ bool DataLoader::LoadDataFromLuaScript(const char* fileName)
 	GetNumber("burst_Shotgun",GameData->burst_Shotgun);
 	GetNumber("gapRotation_Shotgun",GameData->gapRotation_Shotgun);
 
+
+
+	//Bullet
+
 	GetNumber("bounce_time",GameData->bounce_time);
 
-	LoadStrArray("name_Bullet",Weapon_Number,GameData->name_Bullet);
-	LoadNumArray("speed_Bullet",Weapon_Number,GameData->speed_Bullet);
-	LoadNumArray("damage_Bullet",Weapon_Number,GameData->damage_Bullet);
-	
+	LoadStrArray("name_Bullet",Bullet_Number,GameData->name_Bullet);
+	LoadNumArray("speed_Bullet",Bullet_Number,GameData->speed_Bullet);
+	LoadNumArray("damage_Bullet",Bullet_Number,GameData->damage_Bullet);
+	LoadNumArray("flyTime_Bullet",Bullet_Number,GameData->flyTime_Bullet);
+
 	GetNumber("explodeR_RPGBall",GameData->explodeR_RPGBall);
 	GetNumber("acceleration_RPGBall",GameData->acceleration_RPGBall);
 
 	GetNumber("spinSpeed_TrackingMissile",GameData->spinSpeed);
+
+
+
+
+	//Engine
 
 	LoadStrArray("name_Engine",Engine_Number,GameData->name_Engine);
 	LoadNumArray("maxSpeed_Engine",Engine_Number,GameData->maxSpeed_Engine);

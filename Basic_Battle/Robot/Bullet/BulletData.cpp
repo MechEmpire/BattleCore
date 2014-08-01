@@ -22,24 +22,8 @@ void BulletData::LoadStaticData(bullettypename btn)
 	name=pDataLoader->GetGameData()->name_Bullet[btn];
 	speed=pDataLoader->GetGameData()->speed_Bullet[btn];
 	damage=pDataLoader->GetGameData()->damage_Bullet[btn];
+	flyTime=pDataLoader->GetGameData()->flyTime_Bullet[btn];
 }
 
-bullettypename BulletData::getType()
-{
-	return type;
-}
 
-string BulletData::getName()
-{
-	return name;
-}
 
-double BulletData::getSpeed()
-{
-	return speed;
-}
-
-int BulletData::getDamage()
-{
-	return damage;
-}

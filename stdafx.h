@@ -45,7 +45,7 @@ extern "C"
 //#include "Common/2D/Vector2D.h"
 #include "Basic_Battle/Vector2D.h"
 
-
+#include "Basic_Battle/EventTypeName.h"
 #include "Basic_Battle/struct.h"
 
 #include "Basic_Battle/Robot/RobotAIstruct.h"

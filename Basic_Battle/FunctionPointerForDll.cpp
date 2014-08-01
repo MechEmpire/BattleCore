@@ -84,3 +84,8 @@ int getBulletDamage(bullettypename btn)
 {
 	return pDataLoader->getBulletData(btn).getDamage();
 }
+
+int getBulletFlyTime(bullettypename btn)
+{
+	return pDataLoader->getBulletData(btn).getFlyTime();
+}

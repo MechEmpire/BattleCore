@@ -25,15 +25,13 @@ B_ShotgunBall::~B_ShotgunBall(void)
 
 bool B_ShotgunBall::HitObstcale(Obstacle& ob)
 {
-	//ÏûÊ§·µ»Øtrue
-	return true;
+	return GeneralHitObstcale(ob);
 }
 void B_ShotgunBall::Hit(Robot& robot)
 {
-	robot.GetEngine().ModifyHp(-damage);
-	
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	GeneralHit(robot);
 }
 
+void B_ShotgunBall::HitFlyEnd()
+{
+}

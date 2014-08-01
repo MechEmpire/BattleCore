@@ -38,17 +38,14 @@ B_ElectricSaw::~B_ElectricSaw(void)
 
 bool B_ElectricSaw::HitObstcale(Obstacle& ob)
 {
-	//ÏûÊ§·µ»Øtrue
-	return true;
+	return GeneralHitObstcale(ob);
 }
 
 void B_ElectricSaw::Hit(Robot& robot)
 {
-	robot.GetEngine().ModifyHp(-damage);
-
-	
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	GeneralHit(robot);
 }
 
+void B_ElectricSaw::HitFlyEnd()
+{
+}

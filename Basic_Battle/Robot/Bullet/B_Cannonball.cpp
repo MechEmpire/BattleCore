@@ -24,27 +24,22 @@ B_Cannonball::~B_Cannonball(void)
 {
 }
 
-/*
-void B_Cannonball::Hit(Robot & robot)
-{
-	//加农炮弹，最普通的炮弹
-	robot.GetEngine().ModifyHp(-damage);
-	//发送一个Hit信息给RecordManager？
-	//写到flash里的动画信息？由RecordManager完成？
-}
-*/
+
+
+
 bool B_Cannonball::HitObstcale(Obstacle& ob)
 {
-	//消失返回true
-	return true;
+	return GeneralHitObstcale(ob);
 }
+
+
 
 void B_Cannonball::Hit(Robot& robot)
 {
-	robot.GetEngine().ModifyHp(-damage);
-
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	GeneralHit(robot);
 }
 
+
+void B_Cannonball::HitFlyEnd()
+{
+}

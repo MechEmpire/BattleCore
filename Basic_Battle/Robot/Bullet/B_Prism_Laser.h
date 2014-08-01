@@ -19,6 +19,7 @@ public:
 	virtual bullettypename GetType(){return BT_Prism_Laser;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual void Hit(Robot &);
+	virtual void HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 };
 

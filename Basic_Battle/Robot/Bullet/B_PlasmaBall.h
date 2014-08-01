@@ -16,5 +16,6 @@ public:
 	virtual bullettypename GetType(){return BT_PlasmaBall;}
 	virtual bool HitObstcale(Obstacle& ob);
 	virtual void Hit(Robot &);
+	virtual void HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 };
