@@ -106,7 +106,6 @@ void Battlefield::BattleStart()
 	}
 	
 	
-	//TODO:battleStatistics.Init(...);
 	
 	
 	
@@ -286,10 +285,21 @@ int Battlefield::BattleEnd()
 	}
 
 	//TODO:清理善后工作？
-	SweepBattlefield(true,false,false,false);	//只清理子弹
+	SweepBattlefield_Bullet();
+	//SweepBattlefield(true,false,false,false);	//只清理子弹
 
 
+
+
+	//battleStatistics统计
 	battleStatistics.winnerID=winner_single_battle;
+	battleStatistics.numSurvivors=num_Surviver;
+	battleStatistics.battleFrames=pRecordManager->GetCurFrame();
+	battleStatistics.battleMode=battleMode;
+
+
+
+
 
 	return winner;	//pAI中的AI下标(此处一期是AIManager中的下标)，若无胜者为-1
 	
@@ -956,15 +966,7 @@ void Battlefield::Update_Info()
 
 
 
-//这个addRobot根本就用不着Robot作参数，不同的只是pRobotAI_Interface
-bool Battlefield::AddRobot(Robot* newRobot)
-{
-	
-	pRobot.push_back(newRobot);
 
-	//temp
-	return true;
-}
 
 
 int Battlefield::AddRobotAI(RobotAI_Interface* newRobotAI,int index)
@@ -1090,8 +1092,12 @@ void Battlefield::Init_BattleStatistics()
 	battleStatistics.numRobots=pRobot.size();
 }
 
-
-
+/*
+void Battlefield::Finish_BattleStatistics()
+{
+	//battleStatistics.battleFrames=
+}
+*/
 
 
 

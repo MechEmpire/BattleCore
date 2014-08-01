@@ -45,5 +45,7 @@ public:
 	void ReleaseRecord(int winner);	//生成录像文件
 
 	void EnterFrame_Init();
+
+	int GetCurFrame(){return currentFrame;}
 };
 

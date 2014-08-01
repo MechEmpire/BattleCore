@@ -101,7 +101,6 @@ public:
 
 
 	//参战机器人设置
-	bool AddRobot(Robot*);	//向战场添加机器人,返回是否添加成功
 	int AddRobotAI(RobotAI_Interface*,int);	//添加参战AI，返回在pRobot中下标
 
 	//开始战斗，返回战斗是否成功进行（防止Robot添加有误）外部的入口操纵
@@ -131,6 +130,7 @@ public:
 	void Init_Map();		//初始化地图
 
 	void Init_BattleStatistics();
+	//void Finish_BattleStatistics();
 
 	void Init_Info();	//初始化用于AI的info
 	void Update_Info();	//更新战场信息
