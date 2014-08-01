@@ -7,7 +7,7 @@ B_TrackingMissile::B_TrackingMissile(void)
 {
 }
 
-B_TrackingMissile::B_TrackingMissile(double x,double y,double rr,int launcherIDX)
+B_TrackingMissile::B_TrackingMissile(double x,double y,double rr,int launcherIDX,int chaseIDX)
 {
 	spinSpeed=pDataLoader->GetGameData()->spinSpeed;
 
@@ -15,6 +15,22 @@ B_TrackingMissile::B_TrackingMissile(double x,double y,double rr,int launcherIDX
 	LoadData(BT_TrackingMissile);
 
 	GeneralInit(x,y,rr,launcherIDX);
+
+	chaseID=chaseIDX;
+	if(chaseID<0 || chaseID>=(pBattlefield->GetBattleStatistivs().numRobots) )
+	{
+		//选手传入参数出错
+
+		//默认追踪一个不是发射者的Robo（可能已经挂了）
+		if(launcherID>0)
+		{
+			chaseID=launcherID-1;
+		}
+		else
+		{
+			chaseID=launcherID+1;
+		}
+	}
 }
 
 
@@ -32,9 +48,15 @@ void B_TrackingMissile::Hit(Robot& robot)
 {
 	robot.GetEngine().ModifyHp(-damage);
 	
-	Robot* r=(Robot*)(pmngr->GetEntityFromID(launcherID));
+	Robot* r=pBattlefield->GetRobotPointer(launcherID);
 	r->GetAchievementData().Add_hit();
 	r->GetAchievementData().Add_output(damage);
+}
+
+
+int B_TrackingMissile::GetChaseID()
+{
+	return chaseID;
 }
 
 void B_TrackingMissile::AdjustDirection(Robot & robot)

@@ -27,7 +27,7 @@ bool W_RPG::Fire(int mnplt)
 
 		pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
 			Add_Bullet,
-			new B_RPGBall(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetID()));
+			new B_RPGBall(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetBattlefieldID()));
 		
 		pRobot->GetAchievementData().Add_Fire();
 		return true;

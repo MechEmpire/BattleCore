@@ -6,16 +6,19 @@ class B_TrackingMissile :
 	public Bullet
 {
 private:
+	int chaseID;	//追踪的机甲下标
+
 	double spinSpeed;	//旋转速度
 
 public:
 	B_TrackingMissile(void);
-	B_TrackingMissile(double x,double y,double rr,int launcherIDX);
+	B_TrackingMissile(double x,double y,double rr,int launcherIDX,int chaseIDX);
 	virtual ~B_TrackingMissile(void);
 	virtual bullettypename GetType(){return BT_TrackingMissile;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual void Hit(Robot &);
 
 	//矫正轨迹
-	virtual void AdjustDirection(Robot &);
+	int GetChaseID();
+	void AdjustDirection(Robot &);
 };

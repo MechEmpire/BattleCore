@@ -30,9 +30,11 @@ bool W_MissileLauncher::Fire(int mnplt)
 		double r=AnglePlus(rotation,p);
 		double a=AngleToRadian(r);//»¡¶È
 
+		int chaseID=mnplt-1;
+
 		pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
 			Add_Bullet,
-			new B_TrackingMissile(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetID()));
+			new B_TrackingMissile(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetBattlefieldID(), chaseID)  );
 		
 		pRobot->GetAchievementData().Add_Fire();
 		return true;

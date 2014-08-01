@@ -66,10 +66,9 @@ struct RobotAI_BulletInformation
 	//用于RobotAI中Execute(..)方法的提供给参赛AI的Bullet信息
 	int entityID;
 
-	//TODO:int Launcher_ID!!!!!!!
-
-	//这里可以将entityID作为launcher_ID而不改变接口！
-	//不可以，那个是为record准备的。。。
+	//导弹发射者的下标
+	int launcherID;
+	
 
 	//temp
 	bullettypename type;		//子弹类型,属性数据查表获得

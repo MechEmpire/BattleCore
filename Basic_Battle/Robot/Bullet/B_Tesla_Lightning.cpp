@@ -40,11 +40,8 @@ void B_Tesla_Lightning::Hit(Robot& robot)
 {
 	robot.GetEngine().ModifyHp(-damage);
 	
-	Robot* r=(Robot*)(pmngr->GetEntityFromID(launcherID));
+	Robot* r=pBattlefield->GetRobotPointer(launcherID);
 	r->GetAchievementData().Add_hit();
 	r->GetAchievementData().Add_output(damage);
 }
 
-void B_Tesla_Lightning::AdjustDirection(Robot & robot)
-{
-}

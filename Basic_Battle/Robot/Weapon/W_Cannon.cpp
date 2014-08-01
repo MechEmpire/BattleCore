@@ -31,7 +31,7 @@ bool W_Cannon::Fire(int mnplt)
 
 		pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
 			Add_Bullet,
-			new B_Cannonball(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetID()));
+			new B_Cannonball(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetBattlefieldID()));
 		
 		pRobot->GetAchievementData().Add_Fire();
 

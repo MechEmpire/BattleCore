@@ -17,6 +17,8 @@ protected:
 
 	AchievementData_Battle achievement_data;
 
+	int battlefieldID;	//在battlefield的pRobot下标
+
 	//TODO:与服务器等通信这里斟酌
 	int AI_index;		//加载AI在AIManager::pAI中的下标
 
@@ -33,6 +35,8 @@ public:
 
 	//SetAI( 这里参数似乎应该是dll导出类的指针 )
 
+	void SetBattlefieldID(int idx){battlefieldID=idx;}
+
 	void SetAI(RobotAI_Interface*);
 
 	void SetWeapon(weapontypename);
@@ -42,6 +46,7 @@ public:
 	RobotAI_Interface& GetAI(){return *pRobotAI;}
 	Weapon& GetWeapon(){return *pWeapon;}
 	Engine& GetEngine(){return *pEngine;}
+	int GetBattlefieldID(){return battlefieldID;}
 	
 	AchievementData_Battle& GetAchievementData(){return achievement_data;}
 	int GetAIIndex(){return AI_index;}

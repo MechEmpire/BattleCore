@@ -104,13 +104,11 @@ void Robot::Update(int myID)
 
 
 	//AI思考，获得操控参数order
-	//2013-9-1 bug 这里传给dll的info有问题？
 	pRobotAI->Update(order,pBattlefield->GetInfo(),myID);
 
 	//对武器Weapon的开火操控
 	if(pWeapon->Fire(order.fire))
 	{
-		//bug 8-22 pRecordManager ID 不对
 		pDispatcher->DispatchEvent(GetID(),pRecordManager->GetID(),R_Fire,&myID);
 	}
 	

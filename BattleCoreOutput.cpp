@@ -65,6 +65,10 @@ int AddRobotAI(RobotAI_Interface* pAI)
 	pAI->getEngineMaxHp=getEngineMaxHp;
 	pAI->getEngineRotationSpeed=getEngineRotationSpeed;
 	pAI->getEngineAcceleration=getEngineAcceleration;
+
+	pAI->getBulletName=getBulletName;
+	pAI->getBulletSpeed=getBulletSpeed;
+	pAI->getBulletDamage=getBulletDamage;
 	///////////////////
 	
 

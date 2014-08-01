@@ -33,10 +33,17 @@ void RobotAITest::Update(RobotAI_Order& order,const RobotAI_BattlefieldInformati
 	//		myID	... 自己机甲在info中robot数组对应的下标
 	//		(这几个参数的详细说明在开发手册可以找到，你也可以在RobotAIstruct.h中直接找到它们的代码)
 	
-	order.fire=1;
+	order.fire=1+(1-myID);
 	order.wturn=1;
 	order.run=4;
-	order.eturn=-1;
+	if(info.robotInformation[myID].engineTypeName!=ET_Robotman)
+	{
+		order.eturn=-1;
+	}
+	else
+	{
+		order.eturn=0;
+	}
 }
 
 
@@ -76,7 +83,7 @@ void RobotAITest::ChooseArmor(weapontypename& weapon,enginetypename& engine,bool
 string RobotAITest::GetName()
 {
 	//返回你的机甲的名字
-	return "蛋疼的蜘蛛";
+	return "测试Robo";
 }
 
 string RobotAITest::GetAuthor()
@@ -155,7 +162,7 @@ void RobotAITest::onBattleEnd(const RobotAI_BattlefieldInformation& info,int myI
 }
 
 
-void RobotAITest::onHit(bullettypename btn)
+void RobotAITest::onHit(int launcherID,bullettypename btn)
 {
 	//被子弹击中时被调用
 	//参数：btn	...	击中你的子弹种类（枚举类型）

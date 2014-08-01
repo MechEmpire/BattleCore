@@ -82,6 +82,7 @@ void Battlefield::BattleStart()
 		pRobot.at(i)->GetAI().ChooseArmor(wtn,etn,false);
 		pRobot.at(i)->SetWeapon(wtn);
 		pRobot.at(i)->SetEngine(etn);
+		pRobot.at(i)->SetBattlefieldID(i);
 		pRobot.at(i)->Init();
 
 		//定位到出生点
@@ -123,6 +124,10 @@ void Battlefield::BattleStart()
 		pRobot.at(i)->GetAchievementData().Init();
 	}
 	
+
+	Init_BattleStatistics();
+
+
 	pDispatcher->DispatchEvent(GetID(),pRecordManager->GetID(),Battle_Start,NULL);
 
 	//TODO:BattleStart的info
@@ -537,7 +542,7 @@ void Battlefield::Update()
 				for(i=0;i<k;i++)
 				{
 					pR=pRobot[i];
-					if(pR->Survive() && (*iter)->GetLauncher()!=pR->GetID())
+					if(pR->Survive() && (*iter)->GetLauncher()!=pR->GetBattlefieldID())
 					{
 
 						if((*iter)->HitTest(pR->GetEngine()))
@@ -585,7 +590,7 @@ void Battlefield::Update()
 					(*iter)->SetEY(hit_point_nearest.y);
 
 					//2014_03_01击中触发
-					pR->GetAI().onHit((*iter)->GetType());
+					pR->GetAI().onHit((*iter)->GetLauncher(),(*iter)->GetType());
 				}
 				else if(robot_or_obstacle==-1)
 				{
@@ -659,26 +664,33 @@ void Battlefield::Update()
 			(*iter)->Update();
 			//碰撞检测,与Robot
 			//k=pRobot.size();
+
+			//跟踪导弹特殊
+					//这里封装又不好了
+			if((*iter)->GetType()==BT_TrackingMissile)
+			{
+				B_TrackingMissile* pTackingMissile=(B_TrackingMissile*)(*iter);
+				pTackingMissile->AdjustDirection( *pRobot.at(pTackingMissile->GetChaseID()) );
+			}
+
 			for(i=0;i<k;i++)
 			{
 				pR=pRobot[i];
-				if(pR->Survive() && (*iter)->GetLauncher()!=pR->GetID())
+				if(pR->Survive() && (*iter)->GetLauncher()!=pR->GetBattlefieldID())
 				{
-					//跟踪导弹特殊
-					//这里封装又不好了
-					(*iter)->AdjustDirection(*pR);
+					
+					
+
+					//(*iter)->AdjustDirection(*pR);
 
 
-					//bug 8-23 自己射出的子弹这里会先打到自己
-					//通过加launcherID(Weapon)的方式解决
-					//(*iter)->HitTest(pR->GetEngine())
 					if((*iter)->HitTest(pR->GetEngine()))
 					{
 						//HitReact()
 						(*iter)->Hit(*pR);
 
 						//2014_03_01击中触发
-						pR->GetAI().onHit((*iter)->GetType());
+						pR->GetAI().onHit((*iter)->GetLauncher(),(*iter)->GetType());
 
 
 						//删除TODO
@@ -915,25 +927,8 @@ void Battlefield::Update_Info()
 
 
 
-
-
-
-		//2014-3-16
-		//折中解决没有launcherID的办法
-		if((*iter)->GetLauncher()==0)
-		{
-			info.bulletInformation[i].circle.r=-999;
-		}
-		else if((*iter)->GetLauncher()==1)
-		{
-			info.bulletInformation[i].circle.r=999;
-		}
-
-		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-
+		info.bulletInformation[i].launcherID=(*iter)->GetLauncher();
+		
 
 
 
@@ -1090,7 +1085,10 @@ void Battlefield::SweepBattlefield(bool f_bullet=true,bool f_robot=true,bool f_o
 
 
 
-
+void Battlefield::Init_BattleStatistics()
+{
+	battleStatistics.numRobots=pRobot.size();
+}
 
 
 

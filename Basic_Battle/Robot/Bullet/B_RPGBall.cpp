@@ -59,7 +59,7 @@ void B_RPGBall::Hit(Robot & robot)
 	//Dispatch_Remove_Event();删除在Battlefield.cpp里做
 
 	//TODO:范围伤害的统计计算？
-	Robot* r=(Robot*)(pmngr->GetEntityFromID(launcherID));
+	Robot* r=pBattlefield->GetRobotPointer(launcherID);
 	r->GetAchievementData().Add_hit();
 	r->GetAchievementData().Add_output(damage);
 }
@@ -79,9 +79,7 @@ bool B_RPGBall::HitObstcale(Obstacle & ob)
 	//Dispatch_Remove_Event();删除在Battlefield.cpp里做
 }
 
-void B_RPGBall::AdjustDirection(Robot & robot)
-{
-}
+
 
 void B_RPGBall::Update()
 {

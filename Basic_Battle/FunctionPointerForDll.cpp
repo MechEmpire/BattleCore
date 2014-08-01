@@ -67,3 +67,20 @@ double getEngineAcceleration(enginetypename etn)
 {
 	return pDataLoader->getEngineData(etn).getAcceleration();
 }
+
+
+//getBulletData
+string getBulletName(bullettypename btn)
+{
+	return pDataLoader->getBulletData(btn).getName();
+}
+
+double getBulletSpeed(bullettypename btn)
+{
+	return pDataLoader->getBulletData(btn).getSpeed();
+}
+
+int getBulletDamage(bullettypename btn)
+{
+	return pDataLoader->getBulletData(btn).getDamage();
+}

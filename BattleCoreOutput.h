@@ -24,7 +24,7 @@ extern "C"
 
 	bool LaunchBattle();
 
-}
+
 
 
 #ifdef ROBOT_AI_TEST
@@ -32,3 +32,5 @@ extern "C"
 void StartTestingBattle();
 
 #endif
+
+}

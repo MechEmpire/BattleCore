@@ -10,6 +10,9 @@ typedef double (*FP_GET_DOUBLE_W)(weapontypename);
 typedef string (*FP_GET_STRING_E)(enginetypename);
 typedef int (*FP_GET_INT_E)(enginetypename);
 typedef double (*FP_GET_DOUBLE_E)(enginetypename);
+typedef string (*FP_GET_STRING_B)(bullettypename);
+typedef int (*FP_GET_INT_B)(bullettypename);
+typedef double (*FP_GET_DOUBLE_B)(bullettypename);
 
 //#define TRACE (*trace)
 
@@ -24,6 +27,9 @@ typedef double (*FP_GET_DOUBLE_E)(enginetypename);
 #define get_engine_maxHp (*getEngineMaxHp)
 #define get_engine_rotationSpeed (*getEngineRotationSpeed)
 #define get_engine_acceleration (*getEngineAcceleration)
+#define get_bullet_name (*getBulletName)
+#define get_bullet_speed (*getBulletSpeed)
+#define get_bullet_damage (*getBulletDamage)
 
 
 //接口
@@ -75,6 +81,10 @@ public:
 	FP_GET_INT_E getEngineMaxHp;
 	FP_GET_DOUBLE_E getEngineRotationSpeed;
 	FP_GET_DOUBLE_E getEngineAcceleration;
+	//bullet
+	FP_GET_STRING_B getBulletName;
+	FP_GET_DOUBLE_B getBulletSpeed;
+	FP_GET_INT_B getBulletDamage;
 	/////////////////////////////////////////////
 
 
@@ -85,5 +95,5 @@ public:
 	//这里还要加一些触发方法,应该要保证一定冗余
 	//virtual void onReceiveDamage(..)=0		//被击中时调用
 	
-	virtual void onHit(bullettypename)=0;		//被击中时调用
+	virtual void onHit(int,bullettypename)=0;		//被击中时调用
 };

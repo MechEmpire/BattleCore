@@ -28,7 +28,7 @@ bool W_Prism::Fire(int mnplt)
 
 		pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
 			Add_Bullet,
-			new B_Prism_Laser(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetID()));
+			new B_Prism_Laser(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetBattlefieldID()));
 
 		pRobot->GetAchievementData().Add_Fire();
 		return true;

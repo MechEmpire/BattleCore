@@ -31,7 +31,7 @@ private:
 
 	
 
-	const static int maxRobots=2;		//战场最大机器人数
+	//const static int maxRobots=2;		//战场最大机器人数
 	//const static int initBullets=20;	//初始子弹list数量
 
 	BattleMode battleMode;		//战斗模式标记
@@ -53,7 +53,7 @@ public:
 	static Battlefield* Instance();
 
 	//RecordManager使用的获取信息函数
-	int GetMaxRobots(){return maxRobots;}
+	//int GetMaxRobots(){return maxRobots;}
 	string GetRobotInfo_Name(int);
 	string GetRobotInfo_Author(int);
 	int GetRobotInfo_Weapon_Red(int);
@@ -84,6 +84,11 @@ public:
 	BattleStatistics & GetBattleStatistivs()
 	{
 		return battleStatistics;
+	}
+
+	Robot* GetRobotPointer(int id)
+	{
+		return pRobot.at(id);
 	}
 	
 
@@ -125,6 +130,7 @@ public:
 
 	void Init_Map();		//初始化地图
 
+	void Init_BattleStatistics();
 
 	void Init_Info();	//初始化用于AI的info
 	void Update_Info();	//更新战场信息

@@ -44,7 +44,7 @@ bool W_Shotgun::Fire(int mnplt)
 			//b=(double)a+AngleToRadian(gapRotation)*(int)(i-burst/2);	//此式正确性要实验
 			pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
 				Add_Bullet,
-				new B_ShotgunBall(circle.r*cos(c)+circle.x,circle.r*sin(c)+circle.y,b,pRobot->GetID()));
+				new B_ShotgunBall(circle.r*cos(c)+circle.x,circle.r*sin(c)+circle.y,b,pRobot->GetBattlefieldID()));
 		}
 
 		pRobot->GetAchievementData().Add_Fire();

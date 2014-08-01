@@ -13,6 +13,6 @@ public:
 	virtual bullettypename GetType(){return BT_ElectricSaw;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual void Hit(Robot &);
-	virtual void AdjustDirection(Robot &);
+	//virtual void AdjustDirection(Robot &);
 };
 

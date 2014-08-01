@@ -7,18 +7,12 @@ class Bullet :
 	public GameEntity, public BulletData
 {
 protected:
-	//静态属性
 
-	int launcherID;		//发射者Robot的ID,改过了（原来是Weapon的,这样换武器后有小BUG）
+	//2014/8/1战场中pRobot下标
+	int launcherID;		
 
 
-	/*
-	bullettypename type;
-
-	string name;		//子弹的名字
-	double speed;		//子弹飞行速度
-	int damage;			//威力		
-	*/
+	
 
 public:
 	Bullet(void);
@@ -43,6 +37,6 @@ public:
 
 	virtual void HandleEvent(events msg,void* extraInfo){};
 
-	virtual void AdjustDirection(Robot &)=0;
+	//virtual void AdjustDirection(Robot &)=0;
 };
 

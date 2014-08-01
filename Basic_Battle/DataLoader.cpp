@@ -3,7 +3,7 @@
 #include "DataLoader.h"
 
 
-DataLoader::DataLoader():weapon_data(Weapon_Number),engine_data(Engine_Number)
+DataLoader::DataLoader():weapon_data(Weapon_Number),engine_data(Engine_Number),bullet_data(Bullet_Number)
 {
 	GameData=new DataVessel;
 	//pLuaState=lua_open();
@@ -222,6 +222,10 @@ void DataLoader::ConstructDataVector()
 	{
 		engine_data.at(i).LoadStaticData((enginetypename)i);
 	}
+	for(i=0;i<Bullet_Number;i++)
+	{
+		bullet_data.at(i).LoadStaticData((bullettypename)i);
+	}
 }
 
 WeaponData& DataLoader::getWeaponData(weapontypename wtn)
@@ -233,4 +237,9 @@ EngineData& DataLoader::getEngineData(enginetypename etn)
 {
 	EngineData& e=engine_data.at((int)etn);
 	return e;
+}
+BulletData& DataLoader::getBulletData(bullettypename btn)
+{
+	BulletData& b=bullet_data.at((int)btn);
+	return b;
 }

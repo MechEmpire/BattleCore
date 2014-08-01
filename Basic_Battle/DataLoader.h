@@ -11,6 +11,7 @@
 
 #define Weapon_Number 9
 #define Engine_Number 4
+#define Bullet_Number 9
 
 
 
@@ -33,9 +34,9 @@ struct DataVessel
 	double gapRotation_Shotgun;
 
 	//For Bullets
-	string name_Bullet[Weapon_Number];
-	double speed_Bullet[Weapon_Number];
-	int damage_Bullet[Weapon_Number];		//?
+	string name_Bullet[Bullet_Number];
+	double speed_Bullet[Bullet_Number];
+	int damage_Bullet[Bullet_Number];		//?
 	//For RPGBall
 	double explodeR_RPGBall;
 	double acceleration_RPGBall;
@@ -100,7 +101,7 @@ private:
 	//static data
 	vector<WeaponData> weapon_data;
 	vector<EngineData> engine_data;
-	//vector<BulletData> bullet_data;
+	vector<BulletData> bullet_data;
 
 public:
 	
@@ -112,7 +113,7 @@ public:
 	
 	WeaponData& getWeaponData(weapontypename);
 	EngineData& getEngineData(enginetypename);
-	
+	BulletData& getBulletData(bullettypename);
 
 
 };

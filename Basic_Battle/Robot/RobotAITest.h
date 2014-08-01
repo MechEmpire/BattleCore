@@ -107,8 +107,9 @@ public:
 	
 	
 	//被子弹击中时被调用
-	//参数：btn	...	击中你的子弹种类（枚举类型）
-	virtual void onHit(bullettypename);
+	//参数：launcherID 发射者下标
+	//		btn	...	击中你的子弹种类（枚举类型）
+	virtual void onHit(int launcherID,bullettypename btn);
 
 	//-------------------------------------------------------------
 
