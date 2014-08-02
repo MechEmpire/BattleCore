@@ -17,10 +17,12 @@ string getWeaponName(weapontypename wtn)
 	return pDataLoader->getWeaponData(wtn).getName();
 }
 
+/*
 int getWeaponDamage(weapontypename wtn)
 {
 	return pDataLoader->getWeaponData(wtn).getDamage();
 }
+*/
 
 int getWeaponAmmo(weapontypename wtn)
 {

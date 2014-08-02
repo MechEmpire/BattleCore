@@ -17,7 +17,7 @@ typedef double (*FP_GET_DOUBLE_B)(bullettypename);
 //#define TRACE (*trace)
 
 #define get_weapon_name (*getWeaponName)
-#define get_weapon_damage (*getWeaponDamage)
+//#define get_weapon_damage (*getWeaponDamage)
 #define get_weapon_ammo (*getWeaponAmmo)
 #define get_weapon_coolingTime (*getWeaponCoolingTime)
 #define get_weapon_inaccuracy (*getWeaponInaccuracy)
@@ -70,7 +70,6 @@ public:
 	//StaticDataGetter
 	//weapon
 	FP_GET_STRING_W getWeaponName;
-	FP_GET_INT_W getWeaponDamage;
 	FP_GET_INT_W getWeaponAmmo;
 	FP_GET_INT_W getWeaponCoolingTime;
 	FP_GET_DOUBLE_W getWeaponInaccuracy;

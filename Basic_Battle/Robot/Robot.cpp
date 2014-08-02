@@ -180,6 +180,10 @@ void Robot::SetWeapon(weapontypename wtn)
 		pWeapon=new W_ElectricSaw();
 		break;
 
+	case WT_GrenadeThrower:
+		pWeapon=new W_GrenadeThrower();
+		break;
+
 	default:
 		//AI送的数据有问题
 		//默认第一个

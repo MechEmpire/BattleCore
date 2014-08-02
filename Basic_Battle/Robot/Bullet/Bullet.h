@@ -25,13 +25,14 @@ public:
 	//Update延续GameEntity的
 	virtual bullettypename GetType()=0;
 
-
-	virtual void Hit(Robot &)=0;
+	//返回子弹是否消失
+	virtual bool Hit(Robot &)=0;
 	virtual bool HitObstcale(Obstacle &)=0;
-	virtual void HitFlyEnd()=0;
+	//返回是否生成hit信息
+	virtual bool HitFlyEnd()=0;
 
 
-	void GeneralHit(Robot &);
+	bool GeneralHit(Robot &);
 	//返回是否消失
 	bool GeneralHitObstcale(Obstacle &){return true;}
 

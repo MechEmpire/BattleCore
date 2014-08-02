@@ -1,5 +1,5 @@
 #include "RobotAITest.h"
-
+#include "../MacroTypesEquipment.h"
 
 #ifdef ROBOT_AI_TEST
 
@@ -9,7 +9,8 @@ using namespace std;
 
 RobotAITest::RobotAITest()
 {
-
+	m_weapon=(weapontypename)Random(0,(Weapon_Number)-1);
+	m_engine=(enginetypename)Random(0,(Engine_Number)-1);
 }
 
 
@@ -61,8 +62,8 @@ void RobotAITest::ChooseArmor(weapontypename& weapon,enginetypename& engine,bool
 	//weapon=WT_Cannon;	//啊，我爱加农炮
 	//engine=ET_Spider;	//啊，我爱小蜘蛛
 
-	weapon=(weapontypename)Random(0,8);
-	engine=(enginetypename)Random(0,3);
+	weapon=m_weapon;
+	engine=m_engine;
 }
 
 

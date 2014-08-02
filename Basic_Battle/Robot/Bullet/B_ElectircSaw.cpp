@@ -41,11 +41,12 @@ bool B_ElectricSaw::HitObstcale(Obstacle& ob)
 	return GeneralHitObstcale(ob);
 }
 
-void B_ElectricSaw::Hit(Robot& robot)
+bool B_ElectricSaw::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
-void B_ElectricSaw::HitFlyEnd()
+bool B_ElectricSaw::HitFlyEnd()
 {
+	return false;
 }

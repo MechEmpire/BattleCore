@@ -4,9 +4,10 @@
 enum events{
 	Add_Bullet
 	,Remove_Bullet
-	,Explode
+	,Explode_RPG
 	,Prism_Laser
 	,Tesla_Lightning
+	,Explode_Grenade
 
 	,Event_BulletHitTestAllBullet
 

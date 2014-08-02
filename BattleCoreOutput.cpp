@@ -54,7 +54,7 @@ int AddRobotAI(RobotAI_Interface* pAI)
 	pAI->trace=trace_global;		//调试输出函数指针
 	
 	pAI->getWeaponName=getWeaponName;
-	pAI->getWeaponDamage=getWeaponDamage;
+	//pAI->getWeaponDamage=getWeaponDamage;
 	pAI->getWeaponAmmo=getWeaponAmmo;
 	pAI->getWeaponCoolingTime=getWeaponCoolingTime;
 	pAI->getWeaponInaccuracy=getWeaponInaccuracy;
@@ -105,7 +105,7 @@ bool LaunchBattle()
 
 #ifdef ROBOT_AI_TEST
 
-void StartTestingBattle()
+void StartTestingBattleWithRandomEquipment()
 {
 	BattleMode defaultBattleMode(true,4000,true,"zTestingBattle");
 	RobotAI_Interface* ai0=new RobotAITest();
@@ -126,5 +126,34 @@ void StartTestingBattle()
 	delete ai0;
 	delete ai1;
 }
+
+void StartTestingBattleWithAssignedEquipment(int weapon0,int engine0,int weapon1,int engine1)
+{
+	BattleMode defaultBattleMode(true,4000,true,"zTestingBattle");
+	
+	RobotAI_Interface* ai0=new RobotAITest();
+	((RobotAITest*)ai0)->m_weapon=(weapontypename)weapon0;
+	((RobotAITest*)ai0)->m_engine=(enginetypename)engine0;
+
+	RobotAI_Interface* ai1=new RobotAITest();
+	((RobotAITest*)ai1)->m_weapon=(weapontypename)weapon1;
+	((RobotAITest*)ai1)->m_engine=(enginetypename)engine1;
+
+
+	InitNewBattle();
+	SetBattleMode(defaultBattleMode);
+	int id0=AddRobotAI(ai0);
+	int id1=AddRobotAI(ai1);
+	LaunchBattle();
+
+	//TODO:打印一些战斗统计数据
+	BattleStatistics& battleStatistics=pBattlefield->GetBattleStatistivs();
+
+	cout<<"winner id: "<<battleStatistics.winnerID<<'\n';
+
+	delete ai0;
+	delete ai1;
+}
+
 
 #endif

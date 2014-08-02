@@ -14,7 +14,7 @@ public:
 	virtual ~B_Tesla_Lightning(void);
 	virtual bullettypename GetType(){return BT_Tesla_Lightning;}
 	virtual bool HitObstcale(Obstacle &);
-	virtual void Hit(Robot &);
-	virtual void HitFlyEnd();
+	virtual bool Hit(Robot &);
+	virtual bool HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 };

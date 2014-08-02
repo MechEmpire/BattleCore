@@ -36,11 +36,12 @@ bool B_Prism_Laser::HitObstcale(Obstacle& ob)
 {
 	return GeneralHitObstcale(ob);
 }
-void B_Prism_Laser::Hit(Robot& robot)
+bool B_Prism_Laser::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
-void B_Prism_Laser::HitFlyEnd()
+bool B_Prism_Laser::HitFlyEnd()
 {
+	return false;
 }

@@ -20,6 +20,12 @@ protected:
 
 public:
 
+	//测试机甲用
+	weapontypename m_weapon;
+	enginetypename m_engine;
+
+
+
 	//************************************************
 	//这一段函数声明别乱动啊，否则机甲抛锚了别怪我
 

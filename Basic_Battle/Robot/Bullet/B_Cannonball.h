@@ -12,7 +12,7 @@ public:
 	virtual ~B_Cannonball(void);
 	virtual bullettypename GetType(){return BT_Cannonball;}
 	virtual bool HitObstcale(Obstacle &);
-	virtual void Hit(Robot &);
-	virtual void HitFlyEnd();
+	virtual bool Hit(Robot &);
+	virtual bool HitFlyEnd();
 };
 

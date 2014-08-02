@@ -6,7 +6,7 @@ protected:
 	weapontypename type;
 
 	string name;			//武器名字
-	int damage;			//威力
+	//int damage;			//威力
 	int Ammo;			//弹夹（最大弹药量）
 	int coolingTime;	//冷却时间
 	double inaccuracy;	//不准确度（关联发射角度）
@@ -19,7 +19,7 @@ public:
 
 	weapontypename getType();
 	string getName();
-	int getDamage();
+	//int getDamage();
 	int getAmmo();
 	int getCoolingTime();
 	double getInaccuracy();

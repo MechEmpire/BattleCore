@@ -29,7 +29,8 @@ extern "C"
 
 #ifdef ROBOT_AI_TEST
 
-void StartTestingBattle();
+void StartTestingBattleWithRandomEquipment();
+void StartTestingBattleWithAssignedEquipment(int weapon0=0,int engine0=0,int weapon1=4,int engine1=1);
 
 #endif
 

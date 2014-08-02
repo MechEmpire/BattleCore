@@ -45,7 +45,7 @@ void Battlefield::HandleEvent(events msg, void* extraInfo)
 			break;
 		}
 	
-	case Explode:
+	case Explode_RPG:
 		//火箭弹grenade爆炸
 		//TODO:这个做成RPGBall的静态函数
 		{
@@ -57,6 +57,24 @@ void Battlefield::HandleEvent(events msg, void* extraInfo)
 				{
 					//伤害,来自脚本读取类单例
 					pRobot[i]->GetEngine().ModifyHp(-(pDataLoader->GetGameData()->damage_Bullet[BT_RPGBall]));//temp
+				}
+			}
+			delete extraInfo;
+			break;
+		}
+
+	case Explode_Grenade:
+		//火箭弹grenade爆炸
+		//TODO:这个做成RPGBall的静态函数
+		{
+			int i,k;
+			k=pRobot.size();
+			for(i=0;i<k;i++)
+			{
+				if(HitTestCircles(pRobot[i]->GetEngine().GetCircle(),*((Circle*)extraInfo)))
+				{
+					//伤害,来自脚本读取类单例
+					pRobot[i]->GetEngine().ModifyHp(-(pDataLoader->GetGameData()->damage_Bullet[BT_Grenade]));//temp
 				}
 			}
 			delete extraInfo;
@@ -679,6 +697,7 @@ void Battlefield::Update()
 
 			//删了它
 			//这样的结果就导致激光只能用事件方式作为hitInfo了
+
 			RemoveBulletFromBattlefield(iter,true);
 		}
 		else
@@ -715,15 +734,17 @@ void Battlefield::Update()
 					if((*iter)->HitTest(pR->GetEngine()))
 					{
 						//HitReact()
-						(*iter)->Hit(*pR);
+						disappear=(*iter)->Hit(*pR);
 
 						//2014_03_01击中触发
 						pR->GetAI().onHit((*iter)->GetLauncher(),(*iter)->GetType());
 
 
-						//删除TODO
-						RemoveBulletFromBattlefield(iter,true);
-						disappear=true;
+						if(disappear)
+						{
+							RemoveBulletFromBattlefield(iter,true);
+						}
+
 						break;
 					}
 				}
@@ -802,9 +823,9 @@ void Battlefield::Update()
 				disappear=(*iter)->UpdateFlyTime();
 				if(disappear)
 				{
-					//不产生hit的状况
-					(*iter)->HitFlyEnd();
-					RemoveBulletFromBattlefield(iter,false);
+					bool generateHit;	//是否产生hit效果
+					generateHit=(*iter)->HitFlyEnd();
+					RemoveBulletFromBattlefield(iter,generateHit);
 				}
 			}
 

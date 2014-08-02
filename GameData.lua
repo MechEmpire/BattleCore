@@ -1,6 +1,6 @@
---Configuration Data for Armors: Dusty World
---Version 2014.3.5
---By MangoSister
+--Configuration Data for Armors: Mech Empire
+--Version 2014/08/02
+--By MangoSister and ShrekShao
 
 
 --Weapon Data
@@ -16,18 +16,11 @@ name_Weapon[6]="Tesla";
 name_Weapon[7]="Plasma torch";
 name_Weapon[8]="Missile launcher";
 name_Weapon[9]="Electric saw";
+name_Weapon[10]="Grenade Thrower"
 
 --Damage of Each Weapon
-damage_Weapon={};
-damage_Weapon[1]=25;
-damage_Weapon[2]=10;
-damage_Weapon[3]=35;
-damage_Weapon[4]=7;
-damage_Weapon[5]=20;
-damage_Weapon[6]=22;
-damage_Weapon[7]=18;
-damage_Weapon[8]=15;
-damage_Weapon[9]=5;
+--already abandoned
+--damage is a value of Bullet
 
 --Magazine Capacity of Each Weapon
 Ammo_Weapon={};
@@ -40,6 +33,7 @@ Ammo_Weapon[6]=11;
 Ammo_Weapon[7]=12;
 Ammo_Weapon[8]=10;
 Ammo_Weapon[9]=100;
+Ammo_Weapon[10]=9;
 
 --Cooling Time of Each Weapon
 coolingTime_Weapon={};
@@ -52,6 +46,7 @@ coolingTime_Weapon[6]=40;
 coolingTime_Weapon[7]=25;
 coolingTime_Weapon[8]=100;
 coolingTime_Weapon[9]=1;
+coolingTime_Weapon[10]=40;
 
 --Deviation of Each Weapon when Attacking
 inaccuracy_Weapon={};
@@ -64,6 +59,7 @@ inaccuracy_Weapon[6]=30;
 inaccuracy_Weapon[7]=5;
 inaccuracy_Weapon[8]=5;
 inaccuracy_Weapon[9]=5;
+inaccuracy_Weapon[10]=20;
 
 --Rotation Speed of Each Weapon when Turning
 rotationSpeed_Weapon={};
@@ -76,6 +72,7 @@ rotationSpeed_Weapon[6]=3;
 rotationSpeed_Weapon[7]=1.5;
 rotationSpeed_Weapon[8]=2;
 rotationSpeed_Weapon[9]=2;
+rotationSpeed_Weapon[10]=5;
 
 --Radium of Weapon
 radium_Weapon={};
@@ -88,6 +85,7 @@ radium_Weapon[6]=45;
 radium_Weapon[7]=75;
 radium_Weapon[8]=50;
 radium_Weapon[9]=95;
+radium_Weapon[10]=50;
 
 --Cooling Speed for all Weapons
 coolingSpeed_AllWeapon=1;
@@ -109,6 +107,7 @@ name_Bullet[6]="磁暴";
 name_Bullet[7]="等离子";
 name_Bullet[8]="跟踪导弹";
 name_Bullet[9]="电锯";
+name_Bullet[10]="手雷"
 
 speed_Bullet={};
 speed_Bullet[1]=8;
@@ -120,6 +119,7 @@ speed_Bullet[6]=5;
 speed_Bullet[7]=5;
 speed_Bullet[8]=4;
 speed_Bullet[9]=5;
+speed_Bullet[10]=4;
 
 
 --Damage of Each Bullet
@@ -133,6 +133,7 @@ damage_Bullet[6]=22;
 damage_Bullet[7]=18;
 damage_Bullet[8]=15;
 damage_Bullet[9]=5;
+damage_Bullet[10]=25;
 
 
 --flyTime of Each Bullet
@@ -146,11 +147,15 @@ flyTime_Bullet[6]=1;
 flyTime_Bullet[7]=9999;
 flyTime_Bullet[8]=9999;
 flyTime_Bullet[9]=1;
+flyTime_Bullet[10]=100;
 
 
 --RPGBall
 explodeR_RPGBall=100;
 acceleration_RPGBall=1.05;
+
+--Grenade
+explodeR_Grenade=70;
 
 --PlasmaBall
 bounce_time=2;

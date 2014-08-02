@@ -43,13 +43,14 @@ bool B_TrackingMissile::HitObstcale(Obstacle& ob)
 {
 	return GeneralHitObstcale(ob);
 }
-void B_TrackingMissile::Hit(Robot& robot)
+bool B_TrackingMissile::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
-void B_TrackingMissile::HitFlyEnd()
+bool B_TrackingMissile::HitFlyEnd()
 {
+	return false;
 }
 
 

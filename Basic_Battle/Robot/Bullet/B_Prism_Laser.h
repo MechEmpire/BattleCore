@@ -18,8 +18,8 @@ public:
 	virtual ~B_Prism_Laser(void);
 	virtual bullettypename GetType(){return BT_Prism_Laser;}
 	virtual bool HitObstcale(Obstacle &);
-	virtual void Hit(Robot &);
-	virtual void HitFlyEnd();
+	virtual bool Hit(Robot &);
+	virtual bool HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 };
 

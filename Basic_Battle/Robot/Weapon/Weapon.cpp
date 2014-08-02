@@ -115,7 +115,7 @@ void Weapon::LoadData(weapontypename wtn)
 	*/
 	type=pDataLoader->getWeaponData(wtn).getType();
 	name=pDataLoader->getWeaponData(wtn).getName();
-	damage=pDataLoader->getWeaponData(wtn).getDamage();
+	//damage=pDataLoader->getWeaponData(wtn).getDamage();
 	Ammo=pDataLoader->getWeaponData(wtn).getAmmo();
 	coolingTime=pDataLoader->getWeaponData(wtn).getCoolingTime();
 	inaccuracy=pDataLoader->getWeaponData(wtn).getInaccuracy();

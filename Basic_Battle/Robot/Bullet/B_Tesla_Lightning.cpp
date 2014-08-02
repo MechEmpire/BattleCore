@@ -35,11 +35,12 @@ bool B_Tesla_Lightning::HitObstcale(Obstacle& ob)
 {
 	return GeneralHitObstcale(ob);
 }
-void B_Tesla_Lightning::Hit(Robot& robot)
+bool B_Tesla_Lightning::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
-void B_Tesla_Lightning::HitFlyEnd()
+bool B_Tesla_Lightning::HitFlyEnd()
 {
+	return false;
 }

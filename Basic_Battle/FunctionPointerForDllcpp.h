@@ -3,7 +3,7 @@
 //全局函数（供指针用）声明
 void trace_global(string);
 string getWeaponName(weapontypename wtn);
-int getWeaponDamage(weapontypename wtn);
+//int getWeaponDamage(weapontypename wtn);
 int getWeaponAmmo(weapontypename wtn);
 int getWeaponCoolingTime(weapontypename wtn);
 double getWeaponInaccuracy(weapontypename wtn);

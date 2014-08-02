@@ -120,12 +120,13 @@ bool B_PlasmaBall::HitObstcale(Obstacle & ob)
 
 }
 
-void B_PlasmaBall::Hit(Robot& robot)
+bool B_PlasmaBall::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
-void B_PlasmaBall::HitFlyEnd()
+bool B_PlasmaBall::HitFlyEnd()
 {
+	return false;
 }
 

@@ -16,8 +16,8 @@ public:
 	virtual ~B_TrackingMissile(void);
 	virtual bullettypename GetType(){return BT_TrackingMissile;}
 	virtual bool HitObstcale(Obstacle &);
-	virtual void Hit(Robot &);
-	virtual void HitFlyEnd();
+	virtual bool Hit(Robot &);
+	virtual bool HitFlyEnd();
 
 	//½ÃÕý¹ì¼£
 	int GetChaseID();

@@ -1,4 +1,5 @@
 #pragma once
+#include "MacroTypesEquipment.h"
 #include "Robot/Weapon/WeaponData.h"
 #include "Robot/Engine/EngineData.h"
 #include "Robot/Bullet/BulletData.h"
@@ -9,9 +10,7 @@
 #define pDataLoader DataLoader::getInstance()
 
 
-#define Weapon_Number 9
-#define Engine_Number 4
-#define Bullet_Number 9
+
 
 
 
@@ -20,7 +19,6 @@ struct DataVessel
 	//以下是游戏数据变量:
 	//For all wepaons
 	string name_Weapon[Weapon_Number];
-	int damage_Weapon[Weapon_Number];		//?
 	int Ammo_Weapon[Weapon_Number];
 	int coolingTime_Weapon[Weapon_Number];
 	double inaccuracy_Weapon[Weapon_Number];
@@ -41,6 +39,8 @@ struct DataVessel
 	//For RPGBall
 	double explodeR_RPGBall;
 	double acceleration_RPGBall;
+	//For Grenade
+	double explodeR_Grenade;
 
 	//For PlasmaBall
 	int bounce_time;

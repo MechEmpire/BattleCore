@@ -20,6 +20,9 @@ enum weapontypename
 	,WT_PlasmaTorch
 	,WT_MissileLauncher
 	,WT_ElectricSaw
+
+	//二期
+	,WT_GrenadeThrower
 };
 
 enum enginetypename
@@ -43,8 +46,10 @@ enum bullettypename
 	,BT_ElectricSaw
 	
 	//在这里添加游戏玩家可见(应该是武器直接发射的)类型
-
+	,BT_Grenade
 	
+
+
 	//以下是功能性的类型
 	
 	,BT_NULL

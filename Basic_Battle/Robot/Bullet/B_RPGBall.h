@@ -15,9 +15,9 @@ public:
 	B_RPGBall(double x,double y,double rr,int launcherIDX);
 	virtual ~B_RPGBall(void);
 	virtual bullettypename GetType(){return BT_RPGBall;}
-	virtual void Hit(Robot &);		//火箭弹的碰撞后效果特殊
+	virtual bool Hit(Robot &);		//火箭弹的碰撞后效果特殊
 	virtual bool HitObstcale(Obstacle &);
-	virtual void HitFlyEnd();
+	virtual bool HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 
 	virtual void Update();	//火箭弹加速行进，覆盖GameEntity的

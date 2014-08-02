@@ -11,8 +11,8 @@ public:
 	virtual bullettypename GetType(){return BT_ShotgunBall;}
 	virtual ~B_ShotgunBall(void);
 	virtual bool HitObstcale(Obstacle &);
-	virtual void Hit(Robot &);
-	virtual void HitFlyEnd();
+	virtual bool Hit(Robot &);
+	virtual bool HitFlyEnd();
 	//virtual void AdjustDirection(Robot &);
 };
 

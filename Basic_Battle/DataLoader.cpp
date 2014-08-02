@@ -169,7 +169,7 @@ bool DataLoader::LoadDataFromLuaScript(const char* fileName)
 	//Weapon
 
 	LoadStrArray("name_Weapon",Weapon_Number,GameData->name_Weapon);
-	LoadNumArray("damage_Weapon",Weapon_Number,GameData->damage_Weapon);
+	//LoadNumArray("damage_Weapon",Weapon_Number,GameData->damage_Weapon);
 	LoadNumArray("Ammo_Weapon",Weapon_Number,GameData->Ammo_Weapon);
 	LoadNumArray("coolingTime_Weapon",Weapon_Number,GameData->coolingTime_Weapon);
 	LoadNumArray("inaccuracy_Weapon",Weapon_Number,GameData->inaccuracy_Weapon);
@@ -195,6 +195,8 @@ bool DataLoader::LoadDataFromLuaScript(const char* fileName)
 
 	GetNumber("explodeR_RPGBall",GameData->explodeR_RPGBall);
 	GetNumber("acceleration_RPGBall",GameData->acceleration_RPGBall);
+
+	GetNumber("explodeR_Grenade",GameData->explodeR_Grenade);
 
 	GetNumber("spinSpeed_TrackingMissile",GameData->spinSpeed);
 

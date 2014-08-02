@@ -46,7 +46,7 @@ B_RPGBall::~B_RPGBall(void)
 }
 
 
-void B_RPGBall::Hit(Robot & robot)
+bool B_RPGBall::Hit(Robot & robot)
 {
 	//产生范围爆炸
 	Circle* expld=new Circle;
@@ -55,13 +55,15 @@ void B_RPGBall::Hit(Robot & robot)
 	expld->r=Explode_R;
 
 	pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
-		Explode,expld);
+		Explode_RPG,expld);
 	//Dispatch_Remove_Event();删除在Battlefield.cpp里做
 
 	//TODO:范围伤害的统计计算？
 	Robot* r=pBattlefield->GetRobotPointer(launcherID);
 	r->GetAchievementData().Add_hit();
 	r->GetAchievementData().Add_output(damage);
+
+	return true;
 }
 
 bool B_RPGBall::HitObstcale(Obstacle & ob)
@@ -73,7 +75,7 @@ bool B_RPGBall::HitObstcale(Obstacle & ob)
 	expld->r=Explode_R;
 
 	pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
-		Explode,expld);
+		Explode_RPG,expld);
 
 	return true;
 	//Dispatch_Remove_Event();删除在Battlefield.cpp里做
@@ -94,6 +96,7 @@ void B_RPGBall::Update()
 	//cout<<"RPG：调用的是新的Update\n";
 }
 
-void B_RPGBall::HitFlyEnd()
+bool B_RPGBall::HitFlyEnd()
 {
+	return false;
 }

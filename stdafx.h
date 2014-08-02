@@ -92,6 +92,7 @@ extern "C"
 #include "Basic_Battle/Robot/Bullet/B_Tesla_Lightning.h"
 #include "Basic_Battle/Robot/Bullet/B_TrackingMissile.h"
 #include "Basic_Battle/Robot/Bullet/B_ElectricSaw.h"
+#include "Basic_Battle/Robot/Bullet/B_Grenade.h"
 
 
 #include "Basic_Battle/Robot/Engine/EngineData.h"
@@ -115,6 +116,7 @@ extern "C"
 #include "Basic_Battle/Robot/Weapon/W_PlasmaTorch.h"
 #include "Basic_Battle/Robot/Weapon/W_MissileLauncher.h"
 #include "Basic_Battle/Robot/Weapon/W_ElectricSaw.h"
+#include "Basic_Battle/Robot/Weapon/W_GrenadeThrower.h"
 
 //...
 

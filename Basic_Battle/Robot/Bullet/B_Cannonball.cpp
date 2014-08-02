@@ -34,12 +34,13 @@ bool B_Cannonball::HitObstcale(Obstacle& ob)
 
 
 
-void B_Cannonball::Hit(Robot& robot)
+bool B_Cannonball::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
 
-void B_Cannonball::HitFlyEnd()
+bool B_Cannonball::HitFlyEnd()
 {
+	return false;
 }

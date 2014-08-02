@@ -27,11 +27,12 @@ bool B_ShotgunBall::HitObstcale(Obstacle& ob)
 {
 	return GeneralHitObstcale(ob);
 }
-void B_ShotgunBall::Hit(Robot& robot)
+bool B_ShotgunBall::Hit(Robot& robot)
 {
-	GeneralHit(robot);
+	return GeneralHit(robot);
 }
 
-void B_ShotgunBall::HitFlyEnd()
+bool B_ShotgunBall::HitFlyEnd()
 {
+	return false;
 }
