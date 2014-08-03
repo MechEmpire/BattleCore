@@ -82,17 +82,42 @@ void Battlefield::HandleEvent(events msg, void* extraInfo)
 		}
 
 
+	case R_Fire:
+		{
+			int i;
+			int fireID=*((int*)extraInfo);
+			int rn=pRobot.size();
+			for(i=0;i<rn;i++)
+			{
+				if(i!=fireID)
+				{
+					pRobot.at(i)->GetAI().onSomeoneFire(fireID);
+				}
+			}
+
+			break;
+		}
+
+		/*
 	case Event_BulletHitTestAllBullet:
 		{
 			//！！！这么搞，小飞机永远不可能被光棱和磁暴击落了。。
 			//TODO解决方案：（也是尽量统一直线型和普通型子弹的措施）
 			//		直线型特殊获得最近hit_point之后
 			//		产生hittest_bullet型的Bullet
+			//		不行。。这样最近hit_point还是打不到。。
+			//		直线型子弹必须停留至少一帧，在这里调用hittest
+			//		所以我觉得还是放弃比较好。。。
 
 			//extraInfo是Bullet*
 			Bullet* subjectBullet=(Bullet*)extraInfo;
 
 		}
+		*/
+
+
+	default:
+
 	}
 
 }
@@ -722,10 +747,10 @@ void Battlefield::Update()
 
 			for(i=0;i<k;i++)
 			{
-				pR=pRobot[i];
-				if(pR->Survive() && (*iter)->GetLauncher()!=pR->GetBattlefieldID())
+				pR=pRobot.at(i);
+				if(pR->Survive() && ((*iter)->GetLauncher()!=pR->GetBattlefieldID() || (*iter)->GetType()==BT_Grenade ))
 				{
-					
+					//手雷撞到自己也算撞
 					
 
 					//(*iter)->AdjustDirection(*pR);
@@ -736,12 +761,12 @@ void Battlefield::Update()
 						//HitReact()
 						disappear=(*iter)->Hit(*pR);
 
-						//2014_03_01击中触发
-						pR->GetAI().onHit((*iter)->GetLauncher(),(*iter)->GetType());
-
+						
 
 						if(disappear)
 						{
+							//2014_03_01击中触发
+							pR->GetAI().onHit((*iter)->GetLauncher(),(*iter)->GetType());
 							RemoveBulletFromBattlefield(iter,true);
 						}
 

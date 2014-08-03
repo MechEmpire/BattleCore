@@ -1,9 +1,13 @@
 //#include "stdafx.h"
 
+#include <fstream>
+
 #include "Basic_Battle/Robot/RobotAITest.h"
 
 #include "stdafx.h"
 #include "BattleCoreOutput.h"
+
+
 
 
 void LoadGameData()
@@ -81,16 +85,71 @@ int AddRobotAI(RobotAI_Interface* pAI)
 	return (pBattlefield->AddRobotAI(pAI,0));	//先0冗余一下
 }
 
+/*
 AchievementData_Battle& GetAchievementData(int robotID)
 {
 	return (pBattlefield->GetAchievementData(robotID));
 }
+*/
 
-
+/*
 BattleStatistics& GetBattleStatistivs()
 {
 	return (pBattlefield->GetBattleStatistivs());
 }
+*/
+
+void ReplaceFlag(ofstream& out,const string & f)
+{
+	if(f=="nr"){ out<<(pBattlefield->GetBattleStatistivs().numRobots);}
+	else if(f=="wid"){out<<(pBattlefield->GetBattleStatistivs().winnerID);}
+	else if(f=="bf"){out<<(pBattlefield->GetBattleStatistivs().battleFrames);}
+	//TODO:...
+}
+
+
+//输出战斗信息的XML，供网站读取
+//@filename: 输出的文件名和路径
+void OutputBattleXML(string filename)
+{
+	//读取 battleStatics.xml (固定路径) 的格式信函文本
+	//逐字符读取，替换掉 $bs$ 而照样输出其他部分
+	//$...$ 的部分用switch来对应位置
+	ofstream out;	//输出的XML
+	out.open(filename);
+
+	ifstream in;	//读入的格式信函文本（XML）
+	in.open("battle_xml_format.xml");
+
+	char c;
+	while(!in.eof())
+	{
+		in.get(c);
+
+		if(c=='$')
+		{
+			//替换标签
+			string flag;
+			do
+			{
+				in.get(c);
+				flag.push_back(c);
+			}while(c!='$');
+			ReplaceFlag(out,flag);
+		}
+		else
+		{
+			out<<c;
+		}
+
+	}
+
+
+
+	in.close();
+	out.close();
+}
+
 
 
 bool LaunchBattle()

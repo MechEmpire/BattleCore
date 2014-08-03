@@ -112,6 +112,11 @@ public:
 	virtual void onBattleEnd(const RobotAI_BattlefieldInformation& info,int myID);			
 	
 	
+	//有机甲开火时被调用
+	//参数：fireID	... 开火的机甲下标
+	virtual void onSomeoneFire(int fireID);
+
+
 	//被子弹击中时被调用
 	//参数：launcherID 发射者下标
 	//		btn	...	击中你的子弹种类（枚举类型）

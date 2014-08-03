@@ -138,3 +138,5 @@ void Weapon::ReLoad()
 {
 	remainingAmmo=Ammo;
 }
+
+

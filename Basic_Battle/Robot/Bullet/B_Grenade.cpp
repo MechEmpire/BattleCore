@@ -30,45 +30,45 @@ B_Grenade::~B_Grenade(void)
 void B_Grenade::HitCircleBounce(GameEntity * entity)
 {
 	//先位置矫正，利用atan2获取角度选择实际的切点
-		double dx=circle.x-(entity->GetCircle().x);
-		double dy=circle.y-(entity->GetCircle().y);
+	double dx=circle.x-(entity->GetCircle().x);
+	double dy=circle.y-(entity->GetCircle().y);
 
-		double rar=atan2(dy,dx);
-
-
-		circle.x=(entity->GetCircle().r)*cos(rar)+(entity->GetCircle().x);
-		circle.y=(entity->GetCircle().r)*sin(rar)+(entity->GetCircle().y);
-
-		//vx,vy转化为切向速度vp，法向速度vn
-		//反向法向速度vn
-
-		//9-3 这里有问题(旋转的方向)
-		//rar+=PI/2;		//切线角度
-		if(rar>=0 && rar<=PI)
-		{
-			rar=rar-PI/2;
-		}
-		else if(rar<=0 && rar>=-PI)
-		{
-			rar=rar+PI/2;
-		}
+	double rar=atan2(dy,dx);
 
 
-		//dx=circle.x-ob.GetCircle().x;
-		//dy=circle.y-ob.GetCircle().y;
-		double c=cos(rar);	//cos
-		double s=sin(rar);	//sin
+	circle.x=(entity->GetCircle().r)*cos(rar)+(entity->GetCircle().x);
+	circle.y=(entity->GetCircle().r)*sin(rar)+(entity->GetCircle().y);
 
-		//旋转坐标系后的坐标和速度
-		//double x2=c*dx+s*dy;
-		//double y2=c*dy-s*dx;
-		double vx2=c*vx+s*vy;
-		double vy2=c*vy-s*vx;
+	//vx,vy转化为切向速度vp，法向速度vn
+	//反向法向速度vn
 
-		//反转法向速度（vy）
-		vy2=-vy2;
-		vx=c*vx2-s*vy2;
-		vy=c*vy2+s*vx2;
+	//9-3 这里有问题(旋转的方向)
+	//rar+=PI/2;		//切线角度
+	if(rar>=0 && rar<=PI)
+	{
+		rar=rar-PI/2;
+	}
+	else if(rar<=0 && rar>=-PI)
+	{
+		rar=rar+PI/2;
+	}
+
+
+	//dx=circle.x-ob.GetCircle().x;
+	//dy=circle.y-ob.GetCircle().y;
+	double c=cos(rar);	//cos
+	double s=sin(rar);	//sin
+
+	//旋转坐标系后的坐标和速度
+	//double x2=c*dx+s*dy;
+	//double y2=c*dy-s*dx;
+	double vx2=c*vx+s*vy;
+	double vy2=c*vy-s*vx;
+
+	//反转法向速度（vy）
+	vy2=-vy2;
+	vx=c*vx2-s*vy2;
+	vy=c*vy2+s*vx2;
 }
 
 bool B_Grenade::HitObstcale(Obstacle & ob)
@@ -128,10 +128,7 @@ bool B_Grenade::HitFlyEnd()
 		Explode_Grenade,expld);
 	//Dispatch_Remove_Event();删除在Battlefield.cpp里做
 
-	//TODO:范围伤害的统计计算？
-	Robot* r=pBattlefield->GetRobotPointer(launcherID);
-	r->GetAchievementData().Add_hit();
-	r->GetAchievementData().Add_output(damage);
+	
 
 	return true;
 }

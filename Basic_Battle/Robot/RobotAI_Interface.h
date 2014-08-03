@@ -92,8 +92,7 @@ public:
 	virtual void onBattleStart(const RobotAI_BattlefieldInformation&,int)=0;		//一场战斗开始时被调用
 	virtual void onBattleEnd(const RobotAI_BattlefieldInformation&,int)=0;			//一场战斗结束时被调用
 
-	//这里还要加一些触发方法,应该要保证一定冗余
-	//virtual void onReceiveDamage(..)=0		//被击中时调用
 	
+	virtual void onSomeoneFire(int fireID)=0;
 	virtual void onHit(int,bullettypename)=0;		//被击中时调用
 };

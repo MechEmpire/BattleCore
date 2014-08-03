@@ -62,5 +62,7 @@ public:
 	virtual bool Turn(int);
 
 	virtual void HandleEvent(events msg,void* extraInfo){};
+
+	
 };
 

@@ -4,8 +4,14 @@
 //定义BattleCore.lib的输出函数
 //使用lib需要include此头文件
 //和其他一些支持性的struct
+//尽量减少支持性struct的使用
 //---------------------------------------
 
+#define ROBOT_AI_TEST
+
+#include <string>
+
+using namespace std;
 
 extern "C"
 {
@@ -18,9 +24,11 @@ extern "C"
 
 	int AddRobotAI(RobotAI_Interface* pAI);
 
-	AchievementData_Battle& GetAchievementData(int robotID);
+	//AchievementData_Battle& GetAchievementData(int robotID);
 
-	BattleStatistics& GetBattleStatistivs();
+	//BattleStatistics& GetBattleStatistivs();
+
+	void OutputBattleXML(string filename);
 
 	bool LaunchBattle();
 

@@ -110,6 +110,7 @@ void Robot::Update(int myID)
 	if(pWeapon->Fire(order.fire))
 	{
 		pDispatcher->DispatchEvent(GetID(),pRecordManager->GetID(),R_Fire,&myID);
+		pDispatcher->DispatchEvent(GetID(),pBattlefield->GetID(),R_Fire,&myID);
 	}
 	
 	//对引擎Engine的行进Run，旋转Turn操控（改变速度）
