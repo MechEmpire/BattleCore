@@ -33,7 +33,7 @@ void SetBattleMode(const BattleMode & battleMode)
 }
 */
 
-void SetBattleModeWithConfigFile(const string & filename)
+void SetBattleModeWithConfigFile(string filename)
 {
 	pBattlefield->SetBattleModeWithConfigFile(filename);
 }
