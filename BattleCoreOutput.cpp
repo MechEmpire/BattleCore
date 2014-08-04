@@ -33,7 +33,7 @@ void SetBattleMode(const BattleMode & battleMode)
 }
 */
 
-void SetBattleModeWithConfigFile(string filename)
+void SetBattleModeWithConfigFile(const char * filename)
 {
 	pBattlefield->SetBattleModeWithConfigFile(filename);
 }
@@ -101,7 +101,7 @@ void ReplaceFlag(ofstream& out,const string & f)
 
 //输出战斗信息的XML，供网站读取
 //@filename: 输出的文件名和路径
-void OutputBattleXML(string filename)
+void OutputBattleXML(const char * filename)
 {
 	//读取 battleStatics.xml (固定路径) 的格式信函文本
 	//逐字符读取，替换掉 $bs$ 而照样输出其他部分

@@ -41,7 +41,7 @@ public:
 	}
 
 	//filename  文件包括路径
-	void SetByConfigFile(string filename)
+	void SetByConfigFile(const char * filename)
 	{
 		ifstream in;
 		in.open(filename);

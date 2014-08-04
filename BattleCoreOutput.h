@@ -22,7 +22,7 @@ extern "C"
 	void InitNewBattle(/*...*/);
 
 	//void SetBattleMode(const BattleMode & battleMode);
-	void SetBattleModeWithConfigFile(string filename);
+	void SetBattleModeWithConfigFile(const char * filename);
 
 	int AddRobotAI(RobotAI_Interface* pAI);
 
@@ -30,7 +30,7 @@ extern "C"
 
 	//BattleStatistics& GetBattleStatistivs();
 
-	void OutputBattleXML(string filename);
+	void OutputBattleXML(const char * filename);
 
 	bool LaunchBattle();
 
