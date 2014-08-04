@@ -5,7 +5,7 @@
 #define Info_MaxArsenals 2
 #define Info_MaxObstacles 5
 #define Info_MaxRobots 2
-#define Info_MaxBullets 100
+#define Info_MaxBullets 200
 
 
 

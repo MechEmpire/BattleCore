@@ -162,6 +162,13 @@ void RobotAITest::onBattleEnd(const RobotAI_BattlefieldInformation& info,int myI
 	//		myID	... 自己机甲在info中robot数组对应的下标
 }
 
+void RobotAITest::onSomeoneFire(int fireID)
+{
+	//有机甲开火时被调用
+	//参数：fireID	... 开火的机甲下标
+}
+
+
 
 void RobotAITest::onHit(int launcherID,bullettypename btn)
 {

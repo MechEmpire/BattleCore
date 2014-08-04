@@ -93,6 +93,6 @@ public:
 	virtual void onBattleEnd(const RobotAI_BattlefieldInformation&,int)=0;			//一场战斗结束时被调用
 
 	
-	virtual void onSomeoneFire(int fireID)=0;
+	virtual void onSomeoneFire(int)=0;
 	virtual void onHit(int,bullettypename)=0;		//被击中时调用
 };
