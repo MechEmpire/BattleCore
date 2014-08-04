@@ -1,5 +1,6 @@
 #pragma once
-
+#include <string>
+#include "RobotAIstruct.h"
 using namespace std;
 
 

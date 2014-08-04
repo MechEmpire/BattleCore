@@ -7,6 +7,7 @@
 #define Info_MaxRobots 2
 #define Info_MaxBullets 200
 
+#include "../struct.h"
 
 
 enum weapontypename
