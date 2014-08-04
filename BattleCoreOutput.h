@@ -10,6 +10,7 @@
 #define ROBOT_AI_TEST
 
 #include <string>
+#include "Basic_Battle/Robot/RobotAI_Interface.h"
 
 using namespace std;
 
