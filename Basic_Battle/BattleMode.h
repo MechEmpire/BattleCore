@@ -51,7 +51,7 @@ public:
 		in>>limitTime;
 		in>>limit_time_frame;
 		in>>record;
-		//in>>record_name;
+		in>>record_name;
 
 		in.close();
 	}
