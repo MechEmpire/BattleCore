@@ -1,5 +1,6 @@
 BattleCore.vcxproj
 BattleCore.vcxproj.filters
+*.so
 
 Common/
 Lua-5.1.4/
