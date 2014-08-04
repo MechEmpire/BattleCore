@@ -7,4 +7,4 @@
 #define Engine_Number 4
 #define Bullet_Number 10
 
-#endif HEADER_MACROTYPESEQUIPMENT
+#endif
