@@ -14,6 +14,7 @@
 #include <cmath>
 #include <iosfwd>
 #include <limits>
+#include <stdlib.h>
 //#include "misc/utils.h"
 
 #define MIN_DOUBLE 0.001
