@@ -94,7 +94,7 @@ public:
 
 	//战斗参数设置
 	void SetBattleMode(const BattleMode & battle_mode){battleMode=battle_mode;}
-
+	void SetBattleModeWithConfigFile(const string & filename){battleMode.SetByConfigFile(filename);};
 	void SetMode_LimitTime(bool a){battleMode.limitTime=a;}
 	void SetMode_Record(bool a,string filename="Record_1"){battleMode.record=a;pRecordManager->SetFileName(filename);}
 

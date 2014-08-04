@@ -117,7 +117,7 @@ void Battlefield::HandleEvent(events msg, void* extraInfo)
 
 
 	default:
-
+		break;
 	}
 
 }

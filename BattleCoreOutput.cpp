@@ -24,28 +24,19 @@ void InitNewBattle()
 	//清扫之前的战场
 	pBattlefield->SweepBattlefield(true,true,true,true);
 
-
-	/*
-	pAIManager->AddToBattlefield(ai0);
-	pAIManager->AddToBattlefield(ai1);
-
-	pBattlefield->SetBattleMode(battle_mode);
-	
-	pBattlefield->NewBattle();
-
-	pAchievement->Calculate_Single(ai0);
-	pAchievement->Calculate_Single(ai1);
-
-	pBattlefield->SweepBattlefield(true,true,true,true);
-	*/
 }
 
-
+/*
 void SetBattleMode(const BattleMode & battleMode)
 {
 	pBattlefield->SetBattleMode(battleMode);
 }
+*/
 
+void SetBattleModeWithConfigFile(const string & filename)
+{
+	pBattlefield->SetBattleModeWithConfigFile(filename);
+}
 
 
 int AddRobotAI(RobotAI_Interface* pAI)
@@ -172,7 +163,7 @@ void StartTestingBattleWithRandomEquipment()
 
 
 	InitNewBattle();
-	SetBattleMode(defaultBattleMode);
+	pBattlefield->SetBattleMode(defaultBattleMode);
 	int id0=AddRobotAI(ai0);
 	int id1=AddRobotAI(ai1);
 	LaunchBattle();
@@ -200,7 +191,7 @@ void StartTestingBattleWithAssignedEquipment(int weapon0,int engine0,int weapon1
 
 
 	InitNewBattle();
-	SetBattleMode(defaultBattleMode);
+	pBattlefield->SetBattleMode(defaultBattleMode);
 	int id0=AddRobotAI(ai0);
 	int id1=AddRobotAI(ai1);
 	LaunchBattle();

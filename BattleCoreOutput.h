@@ -20,7 +20,8 @@ extern "C"
 
 	void InitNewBattle(/*...*/);
 
-	void SetBattleMode(const BattleMode & battleMode);
+	//void SetBattleMode(const BattleMode & battleMode);
+	void SetBattleModeWithConfigFile(const string & filename);
 
 	int AddRobotAI(RobotAI_Interface* pAI);
 
