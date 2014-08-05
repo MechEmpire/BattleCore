@@ -30,7 +30,7 @@ extern "C"
 
 	//BattleStatistics& GetBattleStatistivs();
 
-	void OutputBattleXML(const char * filename);
+	//void OutputBattleXML(const char * filename);
 
 	bool LaunchBattle();
 

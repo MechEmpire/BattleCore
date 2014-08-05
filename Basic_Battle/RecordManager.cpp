@@ -8,10 +8,10 @@
 
 RecordManager::RecordManager(void)
 {
-	fileType=".txt";
+	//fileType=".txt";
 
 #ifdef TEMP_TEST
-	fileRoute="";
+	//fileRoute="";
 #endif
 
 	Init();
@@ -240,9 +240,10 @@ void RecordManager::ReleaseRecord(int winner)
 	//生成录像
 	//把frameInfo写入文件,no extraInfo?
 	//TODO:路径构建
-	BuildFileRoute();
+	//BuildFileRoute();
 
-	const char * fr=fileRoute_Final.c_str();
+	//const char * fr=fileRoute_Final.c_str();
+	const char * fr=fileName.c_str();
 	f.open(fr);
 	//f.open(fileRoute_Final);
 	

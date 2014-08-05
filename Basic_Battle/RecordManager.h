@@ -9,11 +9,11 @@ class RecordManager :
 	public BaseEntity
 {
 private:
-	string fileType;	//文件后缀名
+	//string fileType;	//文件后缀名
 	string fileName;	//当前录像名称
 
-	string fileRoute;	//路径
-	string fileRoute_Final;	//最终路径
+	//string fileRoute;	//路径
+	//string fileRoute_Final;	//最终路径
 
 	ofstream f;			//文档
 	
@@ -38,7 +38,7 @@ public:
 
 	void SetFileName(string s){fileName=s;}
 
-	void BuildFileRoute(){fileRoute_Final=fileRoute+fileName+fileType;}
+	//void BuildFileRoute()//{fileRoute_Final=fileRoute+fileName+fileType;}
 
 	virtual void HandleEvent(events msg,void* extraInfo);
 

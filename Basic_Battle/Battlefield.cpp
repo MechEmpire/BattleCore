@@ -356,9 +356,13 @@ int Battlefield::BattleEnd()
 	battleStatistics.winnerID=winner_single_battle;
 	battleStatistics.numSurvivors=num_Surviver;
 	battleStatistics.battleFrames=pRecordManager->GetCurFrame();
-	battleStatistics.battleMode=battleMode;
+	//battleStatistics.battleMode=battleMode;
 
-
+	if(battleMode.statistics)
+	{
+		//TODO
+		battleStatistics.Output(battleMode.battle_statistics_name.c_str());
+	}
 
 
 
