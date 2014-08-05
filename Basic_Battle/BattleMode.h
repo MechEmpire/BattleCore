@@ -48,6 +48,7 @@ public:
 		string tmp;
 		getline(in,tmp);
 
+		getline(in,battleTypeName);
 		in>>limitTime;
 		in>>limit_time_frame;
 		in>>record;
