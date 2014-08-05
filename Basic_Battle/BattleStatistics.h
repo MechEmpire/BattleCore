@@ -55,11 +55,12 @@ public:
 			{
 				//Ìæ»»±êÇ©
 				string flag;
-				do
+				in.get(c);
+				while(c!='$')
 				{
-					in.get(c);
 					flag.push_back(c);
-				}while(c!='$');
+					in.get(c);
+				}
 				ReplaceFlag(out,flag);
 			}
 			else

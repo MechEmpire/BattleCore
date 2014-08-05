@@ -24,3 +24,8 @@ OUTPUT_DIR = .
 
 all:
 	$(CC) -O2 -fPIC -shared -o $(OUTPUT_DIR)/libBattleCore.so $(INCLUDE_PATH) $(LIB_PATH) $(LIBS) $(SRC_FILES)
+
+
+copylib: libBattleCore.so
+	sudo rm /usr/lib/libBattleCore.so
+	sudo cp libBattleCore.so /usr/lib/libBattleCore.so
