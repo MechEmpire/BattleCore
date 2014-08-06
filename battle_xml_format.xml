@@ -1,4 +1,9 @@
 <battleStatistics>
 	<recordFileName>$rfn$</recordFileName>
 	<numRobots>$nr$</numRobots>
+	<winnerID>$wid$</winnerID>
+
+	<robotslist>
+		$robotslist$
+	</robotslist>
 </battleStatistics>

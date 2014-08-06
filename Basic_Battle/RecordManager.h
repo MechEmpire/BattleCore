@@ -36,6 +36,7 @@ public:
 
 	void NextFrame(){currentFrame+=1;}
 
+	string GetFileName(){return fileName;}
 	void SetFileName(string s){fileName=s;}
 
 	//void BuildFileRoute()//{fileRoute_Final=fileRoute+fileName+fileType;}
