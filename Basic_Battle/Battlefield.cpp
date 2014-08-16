@@ -59,7 +59,7 @@ void Battlefield::HandleEvent(events msg, void* extraInfo)
 					pRobot[i]->GetEngine().ModifyHp(-(pDataLoader->GetGameData()->damage_Bullet[BT_RPGBall]));//temp
 				}
 			}
-			delete extraInfo;
+			delete ((Circle*)extraInfo);
 			break;
 		}
 
@@ -77,7 +77,8 @@ void Battlefield::HandleEvent(events msg, void* extraInfo)
 					pRobot[i]->GetEngine().ModifyHp(-(pDataLoader->GetGameData()->damage_Bullet[BT_Grenade]));//temp
 				}
 			}
-			delete extraInfo;
+			//delete extraInfo;
+			delete ((Circle*)extraInfo);
 			break;
 		}
 

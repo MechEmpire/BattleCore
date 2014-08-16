@@ -182,8 +182,8 @@ bool DataLoader::LoadDataFromLuaScript(const char* fileName)
 	GetNumber("burst_Shotgun",GameData->burst_Shotgun);
 	GetNumber("gapRotation_Shotgun",GameData->gapRotation_Shotgun);
 
-
-
+	GetNumber("coolingTime_Tiny_MineLayer",GameData->coolingTime_Tiny_MineLayer);
+	GetNumber("ammoConsumption_Mine_MineLayer",GameData->ammoConsumption_Mine_MineLayer);
 	//Bullet
 
 	GetNumber("bounce_time",GameData->bounce_time);
@@ -197,6 +197,8 @@ bool DataLoader::LoadDataFromLuaScript(const char* fileName)
 	GetNumber("acceleration_RPGBall",GameData->acceleration_RPGBall);
 
 	GetNumber("explodeR_Grenade",GameData->explodeR_Grenade);
+
+	GetNumber("explodeR_Mine",GameData->explodeR_Mine);
 
 	GetNumber("spinSpeed_TrackingMissile",GameData->spinSpeed);
 

@@ -1,5 +1,5 @@
---Configuration Data for Armors: Mech Empire
---Version 2014/08/02
+--Configuration Data for Armors: Mech Empire II
+--Version 2014/08/16
 --By MangoSister and ShrekShao
 
 
@@ -16,7 +16,9 @@ name_Weapon[6]="Tesla";
 name_Weapon[7]="Plasma torch";
 name_Weapon[8]="Missile launcher";
 name_Weapon[9]="Electric saw";
-name_Weapon[10]="Grenade Thrower"
+name_Weapon[10]="Grenade Thrower";
+name_Weapon[11]="Mine Layer";
+
 
 --Damage of Each Weapon
 --already abandoned
@@ -34,6 +36,7 @@ Ammo_Weapon[7]=12;
 Ammo_Weapon[8]=10;
 Ammo_Weapon[9]=100;
 Ammo_Weapon[10]=9;
+Ammo_Weapon[11]=40;		--num of mines
 
 --Cooling Time of Each Weapon
 coolingTime_Weapon={};
@@ -47,6 +50,7 @@ coolingTime_Weapon[7]=25;
 coolingTime_Weapon[8]=100;
 coolingTime_Weapon[9]=1;
 coolingTime_Weapon[10]=40;
+coolingTime_Weapon[11]=50;		--cooling time of laying mine
 
 --Deviation of Each Weapon when Attacking
 inaccuracy_Weapon={};
@@ -60,6 +64,7 @@ inaccuracy_Weapon[7]=5;
 inaccuracy_Weapon[8]=5;
 inaccuracy_Weapon[9]=5;
 inaccuracy_Weapon[10]=20;
+inaccuracy_Weapon[11]=0;
 
 --Rotation Speed of Each Weapon when Turning
 rotationSpeed_Weapon={};
@@ -73,6 +78,7 @@ rotationSpeed_Weapon[7]=1.5;
 rotationSpeed_Weapon[8]=2;
 rotationSpeed_Weapon[9]=2;
 rotationSpeed_Weapon[10]=5;
+rotationSpeed_Weapon[11]=3;
 
 --Radium of Weapon
 radium_Weapon={};
@@ -86,6 +92,7 @@ radium_Weapon[7]=75;
 radium_Weapon[8]=50;
 radium_Weapon[9]=95;
 radium_Weapon[10]=50;
+radium_Weapon[11]=50;
 
 --Cooling Speed for all Weapons
 coolingSpeed_AllWeapon=1;
@@ -93,6 +100,11 @@ coolingSpeed_AllWeapon=1;
 --Specific Properties of Shotgun
 burst_Shotgun=5;
 gapRotation_Shotgun=3;
+
+
+--for Mine Layer
+coolingTime_Tiny_MineLayer=20;
+ammoConsumption_Mine_MineLayer=5;
 
 
 
@@ -107,7 +119,10 @@ name_Bullet[6]="磁暴";
 name_Bullet[7]="等离子";
 name_Bullet[8]="跟踪导弹";
 name_Bullet[9]="电锯";
-name_Bullet[10]="手雷"
+name_Bullet[10]="手雷";
+name_Bullet[11]="Vulture地雷";
+name_Bullet[12]="微型10mm辅助子弹";
+
 
 speed_Bullet={};
 speed_Bullet[1]=8;
@@ -120,6 +135,9 @@ speed_Bullet[7]=5;
 speed_Bullet[8]=4;
 speed_Bullet[9]=5;
 speed_Bullet[10]=4;
+speed_Bullet[11]=0;
+speed_Bullet[12]=5;
+
 
 
 --Damage of Each Bullet
@@ -134,6 +152,8 @@ damage_Bullet[7]=18;
 damage_Bullet[8]=15;
 damage_Bullet[9]=5;
 damage_Bullet[10]=25;
+damage_Bullet[11]=45;
+damage_Bullet[12]=4;
 
 
 --flyTime of Each Bullet
@@ -148,6 +168,8 @@ flyTime_Bullet[7]=9999;
 flyTime_Bullet[8]=9999;
 flyTime_Bullet[9]=1;
 flyTime_Bullet[10]=100;
+flyTime_Bullet[11]=200;		--??
+flyTime_Bullet[12]=9999;
 
 
 --RPGBall
@@ -156,6 +178,9 @@ acceleration_RPGBall=1.05;
 
 --Grenade
 explodeR_Grenade=70;
+
+--Mine
+explodeR_Mine=100;
 
 --PlasmaBall
 bounce_time=2;

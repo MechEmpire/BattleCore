@@ -93,7 +93,8 @@ extern "C"
 #include "Basic_Battle/Robot/Bullet/B_TrackingMissile.h"
 #include "Basic_Battle/Robot/Bullet/B_ElectricSaw.h"
 #include "Basic_Battle/Robot/Bullet/B_Grenade.h"
-
+#include "Basic_Battle/Robot/Bullet/B_Mine.h"
+#include "Basic_Battle/Robot/Bullet/B_TinyBall.h"
 
 #include "Basic_Battle/Robot/Engine/EngineData.h"
 
@@ -117,6 +118,7 @@ extern "C"
 #include "Basic_Battle/Robot/Weapon/W_MissileLauncher.h"
 #include "Basic_Battle/Robot/Weapon/W_ElectricSaw.h"
 #include "Basic_Battle/Robot/Weapon/W_GrenadeThrower.h"
+#include "Basic_Battle/Robot/Weapon/W_MineLayer.h"
 
 //...
 

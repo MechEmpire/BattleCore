@@ -31,6 +31,11 @@ struct DataVessel
 	int burst_Shotgun;
 	double gapRotation_Shotgun;
 
+	//for mine layer
+	int coolingTime_Tiny_MineLayer;
+	int ammoConsumption_Mine_MineLayer;
+
+
 	//For Bullets
 	string name_Bullet[Bullet_Number];
 	double speed_Bullet[Bullet_Number];
@@ -41,6 +46,8 @@ struct DataVessel
 	double acceleration_RPGBall;
 	//For Grenade
 	double explodeR_Grenade;
+	//For Mine
+	double explodeR_Mine;
 
 	//For PlasmaBall
 	int bounce_time;

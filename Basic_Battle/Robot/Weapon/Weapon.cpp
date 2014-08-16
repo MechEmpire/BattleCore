@@ -102,20 +102,8 @@ bool Weapon::General_Fire(int mnplt)
 
 void Weapon::LoadData(weapontypename wtn)
 {
-	/*
-	type=wtn;
-	name=pDataLoader->GetGameData()->name_Weapon[wtn];
-	damage=pDataLoader->GetGameData()->damage_Weapon[wtn];
-	Ammo=pDataLoader->GetGameData()->Ammo_Weapon[wtn];
-	coolingTime=pDataLoader->GetGameData()->coolingTime_Weapon[wtn];
-	inaccuracy=pDataLoader->GetGameData()->inaccuracy_Weapon[wtn];
-	rotationSpeed=pDataLoader->GetGameData()->rotationSpeed_Weapon[wtn];
-
-	circle.r=pDataLoader->GetGameData()->radium_Weapon[wtn];
-	*/
 	type=pDataLoader->getWeaponData(wtn).getType();
 	name=pDataLoader->getWeaponData(wtn).getName();
-	//damage=pDataLoader->getWeaponData(wtn).getDamage();
 	Ammo=pDataLoader->getWeaponData(wtn).getAmmo();
 	coolingTime=pDataLoader->getWeaponData(wtn).getCoolingTime();
 	inaccuracy=pDataLoader->getWeaponData(wtn).getInaccuracy();
@@ -129,9 +117,6 @@ void Weapon::InitData()
 	ReLoad();
 	cooling=0;
 	engineRotation=0;
-
-	//temp
-	//circle.r=10;
 }
 
 void Weapon::ReLoad()
