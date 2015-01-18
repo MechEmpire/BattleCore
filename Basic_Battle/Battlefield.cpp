@@ -1196,8 +1196,15 @@ void Battlefield::Init_Map()
 	SweepBattlefield(false,false,true,true);
 
 
-	Construct_Map();
-	
+	//temp
+	if(battleMode.map_name == "!!!")
+	{
+		ConstructMap_Default();
+	}
+	else
+	{
+		ConstructMap_Config(battleMode.map_name.c_str());
+	}
 	
 	
 }

@@ -17,5 +17,9 @@ public:
 	BattleMap();
 	~BattleMap();
 
-	void Construct_Map();
+	void ConstructMap_Default();
+
+
+	//construct map according to map config
+	void ConstructMap_Config(const char *);
 };

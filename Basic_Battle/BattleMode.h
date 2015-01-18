@@ -25,6 +25,8 @@ public:
 	bool statistics;		//是否生成战斗统计
 	string battle_statistics_name;			//BattleStatistics路径名称
 
+	string map_name;		//地图文件路径，或!!!
+
 	BattleMode():record_name("Record_tmp")
 	{
 		battleTypeName="undef";
@@ -50,12 +52,14 @@ public:
 	{
 		//BattleModeConfig.conf格式
 		//战斗模式名，冗余待用
+		
 		//是否限制时间
 		//时间限制帧数
 		//是否生成录像
 		//录像路径
 		//是否生成战斗统计信息
 		//BattleStatistics输出路径
+		//地图文件名和路径，或!!!
 		
 
 
@@ -67,6 +71,7 @@ public:
 
 
 		getline(in,battleTypeName);	//战斗模式名，冗余待用
+
 		in>>limitTime;				//是否限制时间
 		in>>limit_time_frame;		//时间限制帧数
 		in>>record;					//是否生成录像
@@ -74,11 +79,18 @@ public:
 		in>>statistics;				//是否生成战斗统计信息
 		in>>battle_statistics_name;//!!此处仅是战斗统计的输出路径
 
+		
+		in>>map_name;
+
+
 		in.close();
 
 		string tstr=TimeString();
 		record_name+=tstr+"_battleRecord.txt";
 		battle_statistics_name+=tstr+"_battleStatistics.xml";
+
+
+		
 	}
 
 	string TimeString(/*...*/)

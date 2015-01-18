@@ -1,0 +1,10 @@
+Boundary l,r,u,d; birth point[2]: x,y; num_obstacle; x,y,r; num_arsenal; x,y;
+0 1366 0 768
+50 50
+1316 718
+2
+300 250 75
+1066 430 75
+2
+50 630
+1316 50
