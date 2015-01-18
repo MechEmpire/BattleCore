@@ -146,8 +146,8 @@ void BattleMap::ConstructMap_Config(const char * filename)
 	
 	for (int i = 0;i<num_arsenal;i++)
 	{
-		double x,y,r;
-		in>>x>>y>>r;
+		double x,y;
+		in>>x>>y;
 
 		Arsenal* pA=new Arsenal();
 		pA->SetX(x);
