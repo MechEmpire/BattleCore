@@ -1,7 +1,7 @@
 Boundary l,r,u,d; birth point[2]: x,y; num_obstacle; x,y,r; num_arsenal; x,y;
-0 1366 0 768
+0 1366 0 680
 50 50
-1316 718
+1316 630
 2
 300 250 75
 1066 430 75
