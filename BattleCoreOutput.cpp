@@ -107,7 +107,7 @@ bool LaunchBattle()
 
 void StartTestingBattleWithRandomEquipment()
 {
-	BattleMode defaultBattleMode(true,4000,true,"zTestingBattle");
+	BattleMode defaultBattleMode(true,4000,true,"zTestingBattle.txt");
 	RobotAI_Interface* ai0=new RobotAITest();
 	RobotAI_Interface* ai1=new RobotAITest();
 
@@ -129,7 +129,7 @@ void StartTestingBattleWithRandomEquipment()
 
 void StartTestingBattleWithAssignedEquipment(int weapon0,int engine0,int weapon1,int engine1)
 {
-	BattleMode defaultBattleMode(true,4000,true,"zTestingBattle");
+	BattleMode defaultBattleMode(true,4000,true,"zTestingBattle.txt");
 	
 	RobotAI_Interface* ai0=new RobotAITest();
 	((RobotAITest*)ai0)->m_weapon=(weapontypename)weapon0;
