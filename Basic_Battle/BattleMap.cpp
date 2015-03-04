@@ -103,6 +103,15 @@ void BattleMap::ConstructMap_Config(const char * filename)
 	ifstream in;
 	in.open(filename);
 
+	if(!in.is_open())
+	{
+		cout<<"\n\nCannot find map file!\n";
+		cout<<"use default map\n";
+		ConstructMap_Default();
+		
+		return;
+	}
+
 	string tmp;
 	getline(in,tmp);	//第一行描述，下面各行功能，读了扔掉
 

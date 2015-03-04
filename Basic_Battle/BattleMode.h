@@ -3,6 +3,7 @@
 #include <time.h>
 #include <fstream>
 #include <string>
+#include <iostream>
 using namespace std;
 
 #define TIME_LEFT_MAX 4000
@@ -27,13 +28,14 @@ public:
 
 	string map_name;		//地图文件路径，或!!!
 
-	BattleMode():record_name("Record_tmp")
+	BattleMode():record_name("Record_tmp.txt")
 	{
 		battleTypeName="undef";
-		limitTime=false;
+		limitTime=true;
 		limit_time_frame=TIME_LEFT_MAX;
-		record=false;
+		record=true;
 		statistics=false;
+		map_name = "!!!";
 		//debug_log=false;
 	}
 
@@ -66,31 +68,46 @@ public:
 
 		ifstream in;
 		in.open(filename);
-		string tmp;
-		getline(in,tmp);	//第一行描述，下面各行功能，读了扔掉
+		if(in.is_open())
+		{
 
 
-		getline(in,battleTypeName);	//战斗模式名，冗余待用
 
-		in>>limitTime;				//是否限制时间
-		in>>limit_time_frame;		//时间限制帧数
-		in>>record;					//是否生成录像
-		in>>record_name;			//!!仅是录像路径
-		in>>statistics;				//是否生成战斗统计信息
-		in>>battle_statistics_name;//!!此处仅是战斗统计的输出路径
-
-		
-		in>>map_name;
+			string tmp;
+			getline(in,tmp);	//第一行描述，下面各行功能，读了扔掉
 
 
-		in.close();
+			getline(in,battleTypeName);	//战斗模式名，冗余待用
 
-		string tstr=TimeString();
-		record_name+=tstr+"_battleRecord.txt";
-		battle_statistics_name+=tstr+"_battleStatistics.xml";
+			in>>limitTime;				//是否限制时间
+			in>>limit_time_frame;		//时间限制帧数
+			in>>record;					//是否生成录像
+			in>>record_name;			//!!仅是录像路径
+			in>>statistics;				//是否生成战斗统计信息
+			in>>battle_statistics_name;//!!此处仅是战斗统计的输出路径
 
 
-		
+			in>>map_name;
+
+
+			in.close();
+
+
+
+
+			string tstr=TimeString();
+			record_name+=tstr+"_battleRecord.txt";
+			battle_statistics_name+=tstr+"_battleStatistics.xml";
+
+			cout<<'\n'<<filename<<'\n'
+				<<battleTypeName<<'\n'
+				<<limitTime<<'\n'
+				<<limit_time_frame<<'\n'
+				<<record<<'\n'
+				<<record_name<<'\n'
+				<<statistics<<'\n'
+				<<battle_statistics_name<<'\n';
+		}
 	}
 
 	string TimeString(/*...*/)
