@@ -3,6 +3,13 @@
 #### By 狄学长
 ---
 
-生成BattleCore.lib或.a,.so的战斗核心静态库，供其他部分调用。
+install method:
 
-需要在包括它的工程中#include"BattleCoreOutput.h"以及相应的数据结构struct。
+open makefile
+modifile the LUA_LIB_PATH and LUA_INCLUDE_PATH according to the path of lua on your machine.
+Then run:
+    make all
+    make setcopath
+
+
+

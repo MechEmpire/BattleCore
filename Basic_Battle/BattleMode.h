@@ -54,7 +54,7 @@ public:
 	{
 		//BattleModeConfig.conf格式
 		//战斗模式名，冗余待用
-		
+
 		//是否限制时间
 		//时间限制帧数
 		//是否生成录像
@@ -62,7 +62,7 @@ public:
 		//是否生成战斗统计信息
 		//BattleStatistics输出路径
 		//地图文件名和路径，或!!!
-		
+
 
 
 
@@ -99,7 +99,8 @@ public:
 			record_name+=tstr+"_battleRecord.txt";
 			battle_statistics_name+=tstr+"_battleStatistics.xml";
 
-			cout<<'\n'<<filename<<'\n'
+			/*
+            cout<<'\n'<<filename<<'\n'
 				<<battleTypeName<<'\n'
 				<<limitTime<<'\n'
 				<<limit_time_frame<<'\n'
@@ -107,6 +108,7 @@ public:
 				<<record_name<<'\n'
 				<<statistics<<'\n'
 				<<battle_statistics_name<<'\n';
+            */
 		}
 	}
 
