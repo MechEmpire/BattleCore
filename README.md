@@ -7,7 +7,7 @@ install method:
 
 open makefile;
 
-modifile the LUA_LIB_PATH and LUA_INCLUDE_PATH according to the path of lua on your machine.
+modify the LUA_LIB_PATH and LUA_INCLUDE_PATH according to the path of lua on your machine.
 
 
 Then run:
