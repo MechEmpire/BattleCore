@@ -13,7 +13,7 @@ modifile the LUA_LIB_PATH and LUA_INCLUDE_PATH according to the path of lua on y
 Then run:
 
     make all
-    make setcopath
+    sudo make setcopath
 
 
 
