@@ -25,56 +25,7 @@ Robot::Robot(RobotAI_Interface* ai,int index):achievement_data()
 	AI_index=index;
 }
 
-/*
-Robot::Robot(const Robot& r)
-{
-	//Robot的这个复制构造函数暂不需要
 
-	//8-22 很抱歉需要
-	//峰回路转：突然发现这个复制构造函数是否需要？
-	//只要不是战斗过程中，就都用不着
-	//而且要复制的也只是dll的pAI
-
-
-	//这个的复制构造函数。。。。
-	//???
-	//至少有一种傻逼方法是switch(r.type)然后分别用对应的派生类的构造函数
-	
-	switch(r.pWeapon->GetType())
-	{
-	case WT_Cannon:
-		pWeapon=new W_Cannon(*(W_Cannon*)r.pWeapon);
-		break;
-
-
-		//...
-	}
-	//pWeapon=new Weapon(*r.pWeapon);
-
-	switch(r.pEngine->GetType())
-	{
-	case ET_Spider:
-		pEngine=new E_Spider(*(E_Spider*)r.pEngine);
-
-	case ET_Robotman:
-		pEngine=new E_Robotman(*(E_Robotman*)r.pEngine);
-		break;
-
-	case ET_AFV:
-		pEngine=new E_AFV();
-		break;
-
-	case ET_UFO:
-		pEngine=new E_UFO();
-		break;
-		//...
-	}
-	
-
-	//上面两个指针可以用switch的傻逼办法实现，可是pRobotAI呢？
-	//pRobotAI=new
-}
-*/
 
 Robot::~Robot(void)
 {
@@ -183,6 +134,14 @@ void Robot::SetWeapon(weapontypename wtn)
 
 	case WT_GrenadeThrower:
 		pWeapon=new W_GrenadeThrower();
+		break;
+
+	case WT_MineLayer:
+		pWeapon = new W_MineLayer();
+		break;
+
+	case WT_Apollo:
+		pWeapon = new W_Cannon(WT_Apollo);
 		break;
 
 	default:

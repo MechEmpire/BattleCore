@@ -7,6 +7,6 @@ public:
 	W_ElectricSaw(void);
 	virtual ~W_ElectricSaw(void);
 
-	virtual weapontypename GetType(){return WT_ElectricSaw;}
+	virtual weapontypename GetType(){return type;}
 	virtual bool Fire(int mnplt);
 };

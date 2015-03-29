@@ -18,6 +18,7 @@ name_Weapon[8]="Missile launcher";
 name_Weapon[9]="Electric saw";
 name_Weapon[10]="Grenade Thrower";
 name_Weapon[11]="Mine Layer";
+name_Weapon[12]="Apollo Cannon";
 
 
 --Damage of Each Weapon
@@ -37,6 +38,7 @@ Ammo_Weapon[8]=10;
 Ammo_Weapon[9]=100;
 Ammo_Weapon[10]=9;
 Ammo_Weapon[11]=40;		--num of mines
+Ammo_Weapon[12]=8;
 
 --Cooling Time of Each Weapon
 coolingTime_Weapon={};
@@ -51,6 +53,7 @@ coolingTime_Weapon[8]=100;
 coolingTime_Weapon[9]=1;
 coolingTime_Weapon[10]=40;
 coolingTime_Weapon[11]=50;		--cooling time of laying mine
+coolingTime_Weapon[12]=50;
 
 --Deviation of Each Weapon when Attacking
 inaccuracy_Weapon={};
@@ -64,7 +67,8 @@ inaccuracy_Weapon[7]=5;
 inaccuracy_Weapon[8]=5;
 inaccuracy_Weapon[9]=5;
 inaccuracy_Weapon[10]=20;
-inaccuracy_Weapon[11]=0;
+inaccuracy_Weapon[11]=5;
+inaccuracy_Weapon[12]=3;
 
 --Rotation Speed of Each Weapon when Turning
 rotationSpeed_Weapon={};
@@ -79,6 +83,7 @@ rotationSpeed_Weapon[8]=2;
 rotationSpeed_Weapon[9]=2;
 rotationSpeed_Weapon[10]=5;
 rotationSpeed_Weapon[11]=3;
+rotationSpeed_Weapon[12]=5;
 
 --Radium of Weapon
 radium_Weapon={};
@@ -93,6 +98,7 @@ radium_Weapon[8]=50;
 radium_Weapon[9]=95;
 radium_Weapon[10]=50;
 radium_Weapon[11]=50;
+radium_Weapon[12]=95;
 
 --Cooling Speed for all Weapons
 coolingSpeed_AllWeapon=1;
@@ -121,7 +127,8 @@ name_Bullet[8]="跟踪导弹";
 name_Bullet[9]="电锯";
 name_Bullet[10]="手雷";
 name_Bullet[11]="Vulture地雷";
-name_Bullet[12]="微型10mm辅助子弹";
+name_Bullet[12]="钛合金穿甲弹";
+name_Bullet[13]="微型10mm辅助子弹";
 
 
 speed_Bullet={};
@@ -136,7 +143,8 @@ speed_Bullet[8]=4;
 speed_Bullet[9]=5;
 speed_Bullet[10]=4;
 speed_Bullet[11]=0;
-speed_Bullet[12]=5;
+speed_Bullet[12]=11;
+speed_Bullet[13]=5;
 
 
 
@@ -153,7 +161,8 @@ damage_Bullet[8]=15;
 damage_Bullet[9]=5;
 damage_Bullet[10]=25;
 damage_Bullet[11]=45;
-damage_Bullet[12]=4;
+damage_Bullet[12]=30;
+damage_Bullet[13]=4;
 
 
 --flyTime of Each Bullet
@@ -168,8 +177,9 @@ flyTime_Bullet[7]=9999;
 flyTime_Bullet[8]=9999;
 flyTime_Bullet[9]=1;
 flyTime_Bullet[10]=100;
-flyTime_Bullet[11]=200;		--??
+flyTime_Bullet[11]=9999;		--??
 flyTime_Bullet[12]=9999;
+flyTime_Bullet[13]=9999;
 
 
 --RPGBall
@@ -198,13 +208,21 @@ name_Engine[1]="Spider V3";
 name_Engine[2]="Destroyer";
 name_Engine[3]="Warhammer Tank"
 name_Engine[4]="UFO"
+name_Engine[5]="Quadcopter"
+name_Engine[6]="GhostTank"
+name_Engine[7]="X-Craft"
+name_Engine[8]="Shuttle"
 
 --maxSpeed
 maxSpeed_Engine={};
 maxSpeed_Engine[1]=4;
 maxSpeed_Engine[2]=5;
-maxSpeed_Engine[3]=7;
+maxSpeed_Engine[3]=6.5;
 maxSpeed_Engine[4]=6;
+maxSpeed_Engine[5]=4;
+maxSpeed_Engine[6]=6.5;
+maxSpeed_Engine[7]=6;
+maxSpeed_Engine[8]=3;
 
 --Hp
 maxHp_Engine={};
@@ -212,6 +230,10 @@ maxHp_Engine[1]=85;
 maxHp_Engine[2]=90;
 maxHp_Engine[3]=100;
 maxHp_Engine[4]=100;
+maxHp_Engine[5]=85;
+maxHp_Engine[6]=100;
+maxHp_Engine[7]=100;
+maxHp_Engine[8]=180;
 
 --RotationSpeed
 rotationSpeed_Engine={};
@@ -219,6 +241,10 @@ rotationSpeed_Engine[1]=0;
 rotationSpeed_Engine[2]=3;
 rotationSpeed_Engine[3]=3.5;
 rotationSpeed_Engine[4]=4.5;
+rotationSpeed_Engine[5]=0;
+rotationSpeed_Engine[6]=3.5;
+rotationSpeed_Engine[7]=4.5;
+rotationSpeed_Engine[8]=2;
 
 --Acceleration
 acceleration_Engine={};
@@ -226,6 +252,10 @@ acceleration_Engine[1]=0;
 acceleration_Engine[2]=0;
 acceleration_Engine[3]=0.15;
 acceleration_Engine[4]=0.2;
+acceleration_Engine[5]=0;
+acceleration_Engine[6]=0.15;
+acceleration_Engine[7]=0.2;
+acceleration_Engine[8]=0.08;
 
 --Radium of engine
 radium_Engine={};
@@ -233,6 +263,10 @@ radium_Engine[1]=45;
 radium_Engine[2]=48;
 radium_Engine[3]=50;
 radium_Engine[4]=46;
+radium_Engine[5]=45;
+radium_Engine[6]=50;
+radium_Engine[7]=50;
+radium_Engine[8]=70;
 
 
 --Arsenal

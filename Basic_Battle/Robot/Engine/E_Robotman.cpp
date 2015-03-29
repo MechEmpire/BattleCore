@@ -3,10 +3,10 @@
 #include "../../../stdafx.h"
 #include "E_Robotman.h"
 
-E_Robotman::E_Robotman(void)
+E_Robotman::E_Robotman(enginetypename t)
 {
 	shapeType=S_Circle;
-	LoadData(ET_Robotman);
+	LoadData(t);
 	InitData();
 	Init_GameEntity();
 }

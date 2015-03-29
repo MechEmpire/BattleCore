@@ -9,7 +9,7 @@ public:
 	B_MachinegunBall(void);
 	B_MachinegunBall(double x,double y,double rr,int launcherIDX);
 	virtual ~B_MachinegunBall(void);
-	virtual bullettypename GetType(){return BT_MachinegunBall;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

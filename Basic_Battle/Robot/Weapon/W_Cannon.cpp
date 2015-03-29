@@ -4,9 +4,9 @@
 #include "Weapon.h"
 #include "W_Cannon.h"
 
-W_Cannon::W_Cannon(void)
+W_Cannon::W_Cannon(weapontypename t)
 {
-	LoadData(WT_Cannon);
+	LoadData(type);
 	InitData();
 	Init_GameEntity();
 }
@@ -29,9 +29,18 @@ bool W_Cannon::Fire(int mnplt)
 		double r=AnglePlus(rotation,p);
 		double a=AngleToRadian(r);//»¡¶È
 
+
+		bullettypename bt = (bullettypename)type;
+		//bullettypename bt = BT_Cannonball;
+		//if(type == WT_Apollo)
+		//{
+		//	bt = BT_ApolloBall;
+		//}
+
+
 		pDispatcher->DispatchEvent(ID,pBattlefield->GetID(),
 			Add_Bullet,
-			new B_Cannonball(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetBattlefieldID()));
+			new B_Cannonball(circle.r*cos(a)+circle.x,circle.r*sin(a)+circle.y,r,pRobot->GetBattlefieldID(),bt)  );
 		
 		pRobot->GetAchievementData().Add_Fire();
 

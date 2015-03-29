@@ -10,7 +10,7 @@ public:
 	B_TinyBall(void);
 	B_TinyBall(double x,double y,double rr,int launcherIDX);
 	virtual ~B_TinyBall(void);
-	virtual bullettypename GetType(){return BT_TinyBall;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

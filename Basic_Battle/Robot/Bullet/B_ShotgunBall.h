@@ -8,7 +8,7 @@ class B_ShotgunBall :
 public:
 	B_ShotgunBall(void);
 	B_ShotgunBall(double,double,double,int launcherIDX);
-	virtual bullettypename GetType(){return BT_ShotgunBall;}
+	virtual bullettypename GetType(){return type;}
 	virtual ~B_ShotgunBall(void);
 	virtual bool HitObstcale(Obstacle &);
 	virtual bool Hit(Robot &);

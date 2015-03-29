@@ -13,7 +13,7 @@ public:
 	B_PlasmaBall(void);
 	B_PlasmaBall(double x,double y,double rr,int launcherIDX);
 	virtual ~B_PlasmaBall(void);
-	virtual bullettypename GetType(){return BT_PlasmaBall;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle& ob);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

@@ -25,6 +25,8 @@ enum weapontypename
 	//二期
 	,WT_GrenadeThrower
 	,WT_MineLayer
+
+	,WT_Apollo
 };
 
 enum enginetypename
@@ -35,6 +37,11 @@ enum enginetypename
 	,ET_UFO
 
 	//二期
+	,ET_Quad
+	,ET_GhostTank
+	,ET_XCraft
+	,ET_Shuttle
+
 };
 
 enum bullettypename
@@ -53,6 +60,9 @@ enum bullettypename
 	//二期
 	,BT_Grenade
 	,BT_Mine
+
+	,BT_ApolloBall
+
 
 	,BT_TinyBall		//布雷器的辅助子弹
 	

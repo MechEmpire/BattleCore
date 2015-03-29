@@ -4,10 +4,10 @@
 #include "E_Spider.h"
 
 
-E_Spider::E_Spider(void)
+E_Spider::E_Spider(enginetypename t)
 {
 	shapeType=S_Circle;
-	LoadData(ET_Spider);
+	LoadData(t);
 	InitData();
 	Init_GameEntity();
 }

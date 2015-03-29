@@ -13,7 +13,7 @@ public:
 	B_Grenade(void);
 	B_Grenade(double x,double y,double rr,int launcherIDX);
 	virtual ~B_Grenade(void);
-	virtual bullettypename GetType(){return BT_Grenade;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle& ob);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

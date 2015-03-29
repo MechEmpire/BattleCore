@@ -10,7 +10,7 @@ public:
 	B_ElectricSaw(void);
 	B_ElectricSaw(double x,double y,double rr,int launcherIDX);
 	virtual ~B_ElectricSaw(void);
-	virtual bullettypename GetType(){return BT_ElectricSaw;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

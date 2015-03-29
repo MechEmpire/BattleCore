@@ -5,10 +5,10 @@
 #include "E_AFV.h"
 
 
-E_AFV::E_AFV(void)
+E_AFV::E_AFV(enginetypename t)
 {
 	shapeType=S_Circle;
-	LoadData(ET_AFV);
+	LoadData(t);
 	InitData();
 	Init_GameEntity();
 }

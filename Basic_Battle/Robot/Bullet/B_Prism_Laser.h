@@ -16,7 +16,7 @@ public:
 	B_Prism_Laser(void);
 	B_Prism_Laser(double x,double y,double rr,int launcherIDX);
 	virtual ~B_Prism_Laser(void);
-	virtual bullettypename GetType(){return BT_Prism_Laser;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

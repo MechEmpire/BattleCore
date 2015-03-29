@@ -7,6 +7,6 @@ public:
 	W_GrenadeThrower(void);
 	virtual ~W_GrenadeThrower(void);
 
-	virtual weapontypename GetType(){return WT_GrenadeThrower;}
+	virtual weapontypename GetType(){return type;}
 	virtual bool Fire(int mnplt);
 };

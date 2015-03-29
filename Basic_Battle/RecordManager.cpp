@@ -245,7 +245,6 @@ void RecordManager::ReleaseRecord(int winner)
 	//const char * fr=fileRoute_Final.c_str();
 	const char * fr=fileName.c_str();
 	f.open(fr);
-	//f.open(fileRoute_Final);
 	
 
 	int i,j;

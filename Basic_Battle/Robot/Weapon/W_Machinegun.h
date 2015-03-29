@@ -7,7 +7,7 @@ public:
 	W_Machinegun(void);
 	virtual ~W_Machinegun(void);
 
-	virtual weapontypename GetType(){return WT_Machinegun;}
+	virtual weapontypename GetType(){return type;}
 	virtual bool Fire(int mnplt);
 };
 

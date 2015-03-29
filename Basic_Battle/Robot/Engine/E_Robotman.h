@@ -6,11 +6,11 @@ class E_Robotman :
 	public Engine
 {
 public:
-	E_Robotman(void);
+	E_Robotman(enginetypename t = ET_Robotman);
 	virtual ~E_Robotman(void);
 
 
-	virtual enginetypename GetType(){return ET_Robotman;}
+	virtual enginetypename GetType(){return type;}
 	virtual bool Run(int);
 	virtual bool Turn(int);
 };

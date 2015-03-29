@@ -255,7 +255,7 @@ int Battlefield::BattleEnd()
 		//全输，无胜者
 
 		//淘汰赛重赛？
-		cout<<"有一局死光了，淘汰赛重赛\n";
+		//cout<<"有一局死光了，淘汰赛重赛\n";
 
 		for(i=0;i<rn;i++)
 		{

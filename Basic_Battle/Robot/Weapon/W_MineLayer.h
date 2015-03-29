@@ -10,6 +10,6 @@ public:
 	W_MineLayer(void);
 	virtual ~W_MineLayer(void);
 
-	virtual weapontypename GetType(){return WT_MineLayer;}
+	virtual weapontypename GetType(){return type;}
 	virtual bool Fire(int mnplt);
 };

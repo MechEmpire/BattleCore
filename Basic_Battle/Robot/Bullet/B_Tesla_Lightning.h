@@ -12,7 +12,7 @@ public:
 	B_Tesla_Lightning(void);
 	B_Tesla_Lightning(double x,double y,double rr,int launcherIDX);
 	virtual ~B_Tesla_Lightning(void);
-	virtual bullettypename GetType(){return BT_Tesla_Lightning;}
+	virtual bullettypename GetType(){return type;}
 	virtual bool HitObstcale(Obstacle &);
 	virtual bool Hit(Robot &);
 	virtual bool HitFlyEnd();

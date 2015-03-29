@@ -4,10 +4,10 @@
 #include "E_UFO.h"
 
 
-E_UFO::E_UFO(void)
+E_UFO::E_UFO(enginetypename t)
 {
 	shapeType=S_Circle;
-	LoadData(ET_UFO);
+	LoadData(t);
 	InitData();
 	Init_GameEntity();
 }

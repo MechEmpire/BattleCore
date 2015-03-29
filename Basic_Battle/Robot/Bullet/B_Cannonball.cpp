@@ -5,15 +5,17 @@
 
 B_Cannonball::B_Cannonball(void)
 {
+	type = BT_Cannonball;
 	LoadData(BT_Cannonball);
 	shapeType=S_Circle;
 	Init_GameEntity();
 }
 
-B_Cannonball::B_Cannonball(double x,double y,double rr,int launcherIDX)
+B_Cannonball::B_Cannonball(double x,double y,double rr,int launcherIDX,bullettypename t)
 {
+	type = t;
 	shapeType=S_Circle;
-	LoadData(BT_Cannonball);
+	LoadData(type);
 
 	GeneralInit(x,y,rr,launcherIDX);
 

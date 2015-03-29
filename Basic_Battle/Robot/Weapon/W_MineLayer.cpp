@@ -30,7 +30,7 @@ bool W_MineLayer::Fire(int mnplt)
 		{
 			//冷却完成，可以开火
 			cooling=coolingTime;	//枪管发热
-			if(remainingAmmo>0)
+			if(remainingAmmo>=ammoConsumption_Miner)
 			{
 				//TODO:地雷的耗弹量可以大于1
 				remainingAmmo-=ammoConsumption_Miner;		//弹药减少
@@ -53,7 +53,7 @@ bool W_MineLayer::Fire(int mnplt)
 		{
 			//冷却完成，可以开火
 			cooling=coolingTime;	//枪管发热
-			if(remainingAmmo>0)
+			if(remainingAmmo>=1)
 			{
 				remainingAmmo-=1;			//弹药减少
 
