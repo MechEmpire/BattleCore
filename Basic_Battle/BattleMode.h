@@ -28,6 +28,9 @@ public:
 
 	string map_name;		//地图文件路径，或!!!
 
+	string lua_path;
+	string xmlformat_path;
+
 	BattleMode():record_name("Record_tmp.txt")
 	{
 		battleTypeName="undef";
@@ -36,6 +39,8 @@ public:
 		record=true;
 		statistics=false;
 		map_name = "!!!";
+		lua_path = "./GameData.lua";
+		xmlformat_path = "./battle_xml_format.xml";
 		//debug_log=false;
 	}
 
@@ -89,6 +94,8 @@ public:
 
 			in>>map_name;
 
+			in>>lua_path;
+			in>>xmlformat_path;
 
 			in.close();
 

@@ -34,7 +34,7 @@ private:
 	//const static int maxRobots=2;		//战场最大机器人数
 	//const static int initBullets=20;	//初始子弹list数量
 
-	BattleMode battleMode;		//战斗模式标记
+	
 
 	int timeLeft;		//计时模式下时间剩余
 	
@@ -49,6 +49,10 @@ private:
  
 
 public:
+	BattleMode battleMode;		//战斗模式标记
+
+
+
 	//对外方法
 	static Battlefield* Instance();
 

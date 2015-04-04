@@ -46,7 +46,7 @@ void BattleStatistics::Output(const char * filename)
 	out.open(filename);
 
 	ifstream in;	//读入的格式信函文本（XML）
-	in.open("battle_xml_format.xml");
+	in.open(pBattlefield->battleMode.xmlformat_path.c_str());
 
 	char c;
 	while(!in.eof())
