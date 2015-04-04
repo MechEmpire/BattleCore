@@ -11,7 +11,7 @@ public:
 	W_Shotgun(void);
 	virtual ~W_Shotgun(void);
 	
-	virtual weapontypename GetType(){return WT_Shotgun;}
+	//virtual weapontypename GetType(){return WT_Shotgun;}
 	virtual bool Fire(int mnplt);
 };
 

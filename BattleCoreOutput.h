@@ -24,6 +24,9 @@ extern "C"
 	//void SetBattleMode(const BattleMode & battleMode);
 	void SetBattleModeWithConfigFile(const char * filename);
 
+	//set with config file and route by cmd argument
+	void SetBattleModeNew(const char * filename,const char * record_path,const char * statistics_path);
+
 	int AddRobotAI(RobotAI_Interface* pAI);
 
 	//AchievementData_Battle& GetAchievementData(int robotID);

@@ -17,7 +17,7 @@ B_TrackingMissile::B_TrackingMissile(double x,double y,double rr,int launcherIDX
 	GeneralInit(x,y,rr,launcherIDX);
 
 	chaseID=chaseIDX;
-	if(chaseID<0 || chaseID>=(pBattlefield->GetBattleStatistivs().numRobots) )
+	if(chaseID<0 || chaseID>=(pBattlefield->GetBattleStatistics().numRobots) )
 	{
 		//选手传入参数出错
 

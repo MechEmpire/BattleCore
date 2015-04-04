@@ -6,7 +6,7 @@
 
 W_Cannon::W_Cannon(weapontypename t)
 {
-	LoadData(type);
+	LoadData(t);
 	InitData();
 	Init_GameEntity();
 }

@@ -8,7 +8,7 @@ public:
 	W_Prism(void);
 	virtual ~W_Prism(void);
 	
-	virtual weapontypename GetType(){return WT_Prism;}
+	//virtual weapontypename GetType(){return WT_Prism;}
 	virtual bool Fire(int mnplt);
 };
 

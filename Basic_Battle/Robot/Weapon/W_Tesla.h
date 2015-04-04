@@ -7,7 +7,7 @@ public:
 	W_Tesla(void);
 	virtual ~W_Tesla(void);
 
-	virtual weapontypename GetType(){return WT_Tesla;}
+	//virtual weapontypename GetType(){return WT_Tesla;}
 	virtual bool Fire(int mnplt);
 };
 

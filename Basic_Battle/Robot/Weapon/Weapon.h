@@ -34,7 +34,7 @@ public:
 	void SetEngineRotation(double rr){engineRotation=rr;}
 	void SetpRobot(Robot* r){pRobot=r;};
 
-	virtual weapontypename GetType()=0;
+	weapontypename GetType(){return getType();}
 
 	int GetRemainingAmmo(){return remainingAmmo;}
 	int GetCooling(){return cooling;}

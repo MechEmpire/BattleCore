@@ -38,6 +38,12 @@ void SetBattleModeWithConfigFile(const char * filename)
 	pBattlefield->SetBattleModeWithConfigFile(filename);
 }
 
+void SetBattleModeNew(const char * filename,const char * record_path,const char * statistics_path)
+{
+	pBattlefield->SetBattleModeWithConfigFile(filename);
+	pBattlefield->SetBattleModeNew(record_path,statistics_path);
+}
+
 
 int AddRobotAI(RobotAI_Interface* pAI)
 {
@@ -84,9 +90,9 @@ AchievementData_Battle& GetAchievementData(int robotID)
 */
 
 /*
-BattleStatistics& GetBattleStatistivs()
+BattleStatistics& GetBattleStatistics()
 {
-	return (pBattlefield->GetBattleStatistivs());
+	return (pBattlefield->GetBattleStatistics());
 }
 */
 
@@ -119,7 +125,7 @@ void StartTestingBattleWithRandomEquipment()
 	LaunchBattle();
 
 	//TODO:打印一些战斗统计数据
-	BattleStatistics& battleStatistics=pBattlefield->GetBattleStatistivs();
+	BattleStatistics& battleStatistics=pBattlefield->GetBattleStatistics();
 
 	cout<<"winner id: "<<battleStatistics.winnerID<<'\n';
 
@@ -147,7 +153,7 @@ void StartTestingBattleWithAssignedEquipment(int weapon0,int engine0,int weapon1
 	LaunchBattle();
 
 	//TODO:打印一些战斗统计数据
-	BattleStatistics& battleStatistics=pBattlefield->GetBattleStatistivs();
+	BattleStatistics& battleStatistics=pBattlefield->GetBattleStatistics();
 
 	cout<<"winner id: "<<battleStatistics.winnerID<<'\n';
 

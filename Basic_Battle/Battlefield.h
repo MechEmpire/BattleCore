@@ -81,7 +81,7 @@ public:
 		return pRobot.at(index)->GetAchievementData();
 	}
 
-	BattleStatistics & GetBattleStatistivs()
+	BattleStatistics & GetBattleStatistics()
 	{
 		return battleStatistics;
 	}
@@ -95,6 +95,11 @@ public:
 	//战斗参数设置
 	void SetBattleMode(const BattleMode & battle_mode){battleMode=battle_mode;}
 	void SetBattleModeWithConfigFile(const char * filename){battleMode.SetByConfigFile(filename);};
+	void SetBattleModeNew(const char * record_path,const char * statistics_path)
+	{
+		battleMode.record_name = record_path;
+		battleMode.battle_statistics_name = statistics_path;
+	}
 	void SetMode_LimitTime(bool a){battleMode.limitTime=a;}
 	void SetMode_Record(bool a,string filename="Record_1"){battleMode.record=a;pRecordManager->SetFileName(filename);}
 
