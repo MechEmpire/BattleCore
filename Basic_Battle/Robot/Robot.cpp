@@ -181,6 +181,22 @@ void Robot::SetEngine(enginetypename etn)
 		pEngine=new E_UFO();
 		break;
 
+	case ET_Quad:
+		pEngine=new E_Spider(ET_Quad);
+		break;
+
+	case ET_Shuttle:
+		pEngine=new E_Robotman(ET_Shuttle);
+		break;
+
+	case ET_GhostTank:
+		pEngine=new E_AFV(ET_GhostTank);
+		break;
+
+	case ET_XCraft:
+		pEngine=new E_UFO(ET_XCraft);
+		break;
+
 	default:
 		//AI送的数据有问题
 		//默认第一个
