@@ -401,7 +401,7 @@ void RecordManager::ReleaseRecord(int winner)
 				<<pB->y<<','
 				<<pB->rotation;
 
-			f<<pB->launcherID;
+			f<<','<<pB->launcherID;
 			//<<'*';
 
 
