@@ -73,6 +73,8 @@ struct Record_BulletInformation
 	//double vx,vy,vr;
 
 	int explode;		//是否集中而爆炸（或反弹之类）
+
+	int launcherID;
 };
 
 struct Record_HitInformation

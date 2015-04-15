@@ -204,7 +204,7 @@ void RecordManager::Update_FrameInfo(RobotAI_BattlefieldInformation& battleInfo)
 		rb->x=bb->circle.x;
 		rb->y=bb->circle.y;
 		rb->rotation=bb->rotation;
-		
+		rb->launcherID = bb->launcherID;
 		//...
 
 		i++;
@@ -400,6 +400,8 @@ void RecordManager::ReleaseRecord(int winner)
 				<<pB->x<<','
 				<<pB->y<<','
 				<<pB->rotation;
+
+			f<<pB->launcherID;
 			//<<'*';
 
 
