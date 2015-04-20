@@ -30,13 +30,13 @@ Ammo_Weapon={};
 Ammo_Weapon[1]=10;
 Ammo_Weapon[2]=8;
 Ammo_Weapon[3]=5;
-Ammo_Weapon[4]=50;
+Ammo_Weapon[4]=30;
 Ammo_Weapon[5]=7;
 Ammo_Weapon[6]=11;
 Ammo_Weapon[7]=12;
 Ammo_Weapon[8]=10;
-Ammo_Weapon[9]=100;
-Ammo_Weapon[10]=9;
+Ammo_Weapon[9]=50;
+Ammo_Weapon[10]=15;
 Ammo_Weapon[11]=40;		--num of mines
 Ammo_Weapon[12]=8;
 
@@ -46,7 +46,7 @@ coolingTime_Weapon[1]=30;
 coolingTime_Weapon[2]=80;
 coolingTime_Weapon[3]=100;
 coolingTime_Weapon[4]=5;
-coolingTime_Weapon[5]=50;
+coolingTime_Weapon[5]=70;
 coolingTime_Weapon[6]=40;
 coolingTime_Weapon[7]=25;
 coolingTime_Weapon[8]=100;
@@ -62,7 +62,7 @@ inaccuracy_Weapon[2]=5;
 inaccuracy_Weapon[3]=3;
 inaccuracy_Weapon[4]=7;
 inaccuracy_Weapon[5]=5;
-inaccuracy_Weapon[6]=30;
+inaccuracy_Weapon[6]=15;
 inaccuracy_Weapon[7]=5;
 inaccuracy_Weapon[8]=5;
 inaccuracy_Weapon[9]=5;
@@ -132,18 +132,18 @@ name_Bullet[13]="微型10mm辅助子弹";
 
 
 speed_Bullet={};
-speed_Bullet[1]=8;
-speed_Bullet[2]=7.5;
-speed_Bullet[3]=6;
-speed_Bullet[4]=10;
+speed_Bullet[1]=11;
+speed_Bullet[2]=10;
+speed_Bullet[3]=8;
+speed_Bullet[4]=12;
 speed_Bullet[5]=5;
 speed_Bullet[6]=5;
 speed_Bullet[7]=5;
 speed_Bullet[8]=4;
 speed_Bullet[9]=5;
-speed_Bullet[10]=4;
+speed_Bullet[10]=6;
 speed_Bullet[11]=0;
-speed_Bullet[12]=11;
+speed_Bullet[12]=14;
 speed_Bullet[13]=5;
 
 
@@ -161,7 +161,7 @@ damage_Bullet[8]=15;
 damage_Bullet[9]=5;
 damage_Bullet[10]=25;
 damage_Bullet[11]=45;
-damage_Bullet[12]=30;
+damage_Bullet[12]=25;
 damage_Bullet[13]=4;
 
 
@@ -217,21 +217,21 @@ name_Engine[8]="Shuttle"
 maxSpeed_Engine={};
 maxSpeed_Engine[1]=4;
 maxSpeed_Engine[2]=5;
-maxSpeed_Engine[3]=6.5;
+maxSpeed_Engine[3]=6;
 maxSpeed_Engine[4]=6;
 maxSpeed_Engine[5]=4;
-maxSpeed_Engine[6]=6.5;
+maxSpeed_Engine[6]=6;
 maxSpeed_Engine[7]=6;
-maxSpeed_Engine[8]=3;
+maxSpeed_Engine[8]=1;
 
 --Hp
 maxHp_Engine={};
 maxHp_Engine[1]=85;
 maxHp_Engine[2]=90;
-maxHp_Engine[3]=100;
+maxHp_Engine[3]=95;
 maxHp_Engine[4]=100;
 maxHp_Engine[5]=85;
-maxHp_Engine[6]=100;
+maxHp_Engine[6]=95;
 maxHp_Engine[7]=100;
 maxHp_Engine[8]=180;
 
@@ -255,7 +255,7 @@ acceleration_Engine[4]=0.2;
 acceleration_Engine[5]=0;
 acceleration_Engine[6]=0.15;
 acceleration_Engine[7]=0.2;
-acceleration_Engine[8]=0.08;
+acceleration_Engine[8]=0;
 
 --Radium of engine
 radium_Engine={};
@@ -265,7 +265,7 @@ radium_Engine[3]=50;
 radium_Engine[4]=46;
 radium_Engine[5]=45;
 radium_Engine[6]=50;
-radium_Engine[7]=50;
+radium_Engine[7]=46;
 radium_Engine[8]=70;
 
 
