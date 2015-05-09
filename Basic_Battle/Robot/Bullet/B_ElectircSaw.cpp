@@ -48,5 +48,6 @@ bool B_ElectricSaw::Hit(Robot& robot)
 
 bool B_ElectricSaw::HitFlyEnd()
 {
-	return false;
+	//return false;
+	return true;
 }

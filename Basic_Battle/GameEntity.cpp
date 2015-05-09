@@ -66,8 +66,6 @@ void GameEntity::MomentumHit(GameEntity &g1,GameEntity &g2)
 
 	//参考flash
 
-	
-
 
 	//确定已经碰撞后
 	double vx1,vy1,vr1;
@@ -132,7 +130,7 @@ void GameEntity::MomentumHit(GameEntity &g1,GameEntity &g2)
 	
 
 	
-
+	
 	//更新位置，防止吸住
 	//3_11,防除数为零
 	double absV=abs(vel1.x)+abs(vel2.x);
@@ -150,7 +148,7 @@ void GameEntity::MomentumHit(GameEntity &g1,GameEntity &g2)
 		pos1.x+=vel1.x/absV*overlap;
 		pos2.x+=vel2.x/absV*overlap;
 	}
-
+	
 
 
 	//旋转回去
@@ -165,24 +163,40 @@ void GameEntity::MomentumHit(GameEntity &g1,GameEntity &g2)
 	g1.SetX(g1.GetCircle().x+pos1F.x);
 	g1.SetY(g1.GetCircle().y+pos1F.y);
 	*/
-	//2014-3-15粗暴调整位置
-	g2.SetX(g2.GetCircle().x-vx2o);
-	g2.SetY(g2.GetCircle().y-vy2o);
-	g1.SetX(g1.GetCircle().x-vx1o);
-	g1.SetY(g1.GetCircle().y-vy1o);
 
 
-
+	
 
 	//把速度旋转回去
 	Point vel1F=myRotate(vel1.x,vel1.y,s,c,false);
 	Point vel2F=myRotate(vel2.x,vel2.y,s,c,false);
 
 
+	
+	//2014-3-15粗暴调整位置
+	g2.SetX(g2.GetCircle().x-vx2o);
+	g2.SetY(g2.GetCircle().y-vy2o);
+	g1.SetX(g1.GetCircle().x-vx1o);
+	g1.SetY(g1.GetCircle().y-vy1o);
+	
+	
 
+	/*
+	//20150509
+	Vector2D g1_pos(g1.circle.x,g1.circle.y);
+	Vector2D g2_pos(g2.circle.x,g2.circle.y);
+	Vector2D g1_to_g2(g2_pos - g1_pos);
+	//double mov_length = (g1_to_g2.Length() - (g1.circle.r + g2.circle.r) ) / 2;
 
+	g1_to_g2.Normalize();
+	g1_pos -= 3 * g1_to_g2;
+	g2_pos += 3 * g1_to_g2;
 
-
+	g2.SetX(g2_pos.x);
+	g2.SetY(g2_pos.y);
+	g1.SetX(g1_pos.x);
+	g1.SetY(g1_pos.y);
+	*/
 
 	//这里直接设定vx,vy会有问题(对蜘蛛和毁灭者)
 	//因为操纵vxvy时是直接设定值而非叠加
@@ -192,6 +206,14 @@ void GameEntity::MomentumHit(GameEntity &g1,GameEntity &g2)
 	g2.SetVX(vel2F.x);
 	g2.SetVY(vel2F.y);
 }
+
+
+
+
+
+
+
+
 
 void GameEntity::MomentumHit_Half(GameEntity &g1,GameEntity &g2)
 {
